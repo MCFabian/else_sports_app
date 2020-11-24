@@ -4,12 +4,19 @@
 		<meta charset="utf-8">
 		<!-- scripts   -->
 		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/bb.js"></script>
+		
 		<!-- <script type="text/javascript" src="js/cordova.js"></script> -->
 		<!-- <script type="text/javascript" src="js/barcodescanner.js"></script> -->
+		
+		<!-- CSS   -->
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/variables.css" rel="stylesheet" type="text/css" />
 		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
 		<link href="css/icons.css" rel="stylesheet" type="text/css" />
+		<link href="css/hamburger.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Viewport   -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -17,8 +24,55 @@
 	</head>
 	
 	<body>
+		<div id="overlay"></div>
 		<div id="wrapper">
-			
+			<nav id="nav">
+				<h1 id="menu_title" class="red">Menü</h1>
+				<p id="menu_hint" class="hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<ul>
+					<li>
+						<a class="card card-programm " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+						</a>
+					</li>
+					<li>
+						<a class="card card-programm " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+							<button id="menuscanner">
+								<span class="icon">edit</span>QR-Code scannen
+							</button>
+						</a>
+					</li>
+
+				</ul>
+
+				<div id="schools">
+					<p class="hint center-text">
+						Eine Zusammenarbeit der <strong>Ernst-Litfaß-Schule</strong> und <strong>Emil-Fischer-Schule.</strong>
+					</p>
+				</div>
+
+				<div id="inner-footer">
+					<ul>
+						<li><a href="#">Datenschutz</a></li>
+						<li><a href="#">Impressum</a></li>
+					</ul> 
+				</div>
+			</nav>
+			<!--< NAV-HOLDER>-->
+			<div id="nav-holder">
+				<ul>
+					<li>
+						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--minus toogle" type="button">
+							<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+							</span>
+						</button>
+					</li>
+				</ul>
+			</div>
 			<div id="scann-bar">
 				QR-Code scannen
 				<button class="icon" id="button1" onClick="readQR()">close</button>
