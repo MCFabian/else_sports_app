@@ -1,15 +1,28 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<!-- scripts   -->
 		<script type="text/javascript" src="js/script.js"></script>
-		<script type="text/javascript" src="js/cordova.js"></script>
-		<script type="text/javascript" src="js/barcodescanner.js"></script>
+		<!-- <script type="text/javascript" src="js/cordova.js"></script> -->
+		<!-- <script type="text/javascript" src="js/barcodescanner.js"></script> -->
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/variables.css" rel="stylesheet" type="text/css" />
+		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
+		<link href="css/icons.css" rel="stylesheet" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
 	</head>
 	
 	<body>
-		<div>
-			<button id="button1" onClick="readQR()">QR-Code scannen</button>
+		<div id="wrapper">
+			
+			<div id="scann-bar">
+				QR-Code scannen
+				<button class="icon" id="button1" onClick="readQR()">close</button>
+			</div>
 		</div>
 	</body>
 </html>
