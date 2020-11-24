@@ -151,7 +151,7 @@ nav, #nav {
   bottom: -100%;
   position: fixed;
   pointer-events: none;
-  height: 75%;
+  /* height: 75%; */
   display: block;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -296,13 +296,13 @@ nav>ul>li>a:hover {
 @media (max-width: 1000px) {
   nav, #nav {
     width: calc(100% - 30px);
-    padding: 50px 15px 0 15px;
+    padding: 50px 15px 15px 15px;
   }
 }
 
 @media (max-width: 768px) {
   nav, #nav {
     width: calc(100% - 30px);
-    padding: 50px 15px 0 15px;
+    padding: 50px 15px 15px 15px;
   }
 }

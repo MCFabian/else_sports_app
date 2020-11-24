@@ -141,6 +141,40 @@ p.hint {
 	color: var(--blue);
 }
 
+#menuscanner {
+	font-weight: 600;
+}
+
+#menuscanner span {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+#logo-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#else, #fischer {
+	margin: 15px 7.5px;
+	height: 30px;
+	width: 79px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#else {
+	background-image: url("../img/menu_else.png");
+}
+
+#fischer {
+	background-image: url("../img/menu_fischer.png");
+}
+
+
+
 .card-programm::after {
 	content: "";
 	background-image: url("../img/menu_programm_pattern.png");
