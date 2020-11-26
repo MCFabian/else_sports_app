@@ -14,6 +14,10 @@ main {
     padding: 95px 30px 15px 30px;
     overflow-y: auto;
     overflow-x: hidden;
+    background-image: url("../img/background_pattern.png");
+    background-position: 0 85%;
+    background-size: 120px;
+    background-repeat: no-repeat;
 }
 
 main#home {

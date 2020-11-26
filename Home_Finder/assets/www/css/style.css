@@ -236,6 +236,63 @@
 #game {
 	background: var(--red);
 	color: #fff;
+	position: relative;
+	background-image: url("../img/qr_code.png");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 35%;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	z-index: 0;
+}
+
+#media {
+	background: var(--green);
+}
+
+#game::before {
+	background-image: linear-gradient(180deg, rgba(229, 75, 103, 0)  0%, var(--red) 100%);
+	content: "";
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+#game .homecards-text, #media .homecards-text {
+	background: transparent;
+}
+
+#game .homecards-text small, #media .homecards-text small {
+	color: #F5F5F5;
+}
+
+#game .homecards-text h2, #media .homecards-text h2 {
+	color: #fff;
+}
+
+#progress-indicator {
+	background: #F3F4F8;
+	height: 5px;
+	width: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	top: 5px;
+}
+
+#percent {
+	background: var(--lightgrey);
+	height: 5px;
+	width: 50%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 #programm>span {
@@ -271,13 +328,22 @@
     text-align: center;
     margin: auto 15px auto 0;
     padding: 4px;
-    background: #CBD5F8;
-    background-size: 22px;
+    background-size: 36px;
     background-repeat: no-repeat;
     background-position: center;	
 }
 
 #programm-icon {
-	background-image: url("../img/emoji/waving.png");
+	background-image: url("../img/emoji/juggling.png");
 }
+
+#game-icon {
+	background-image: url("../img/emoji/controller.png");
+}
+
+#media-icon {
+	background-image: url("../img/instagram.png");
+}
+
+
 
