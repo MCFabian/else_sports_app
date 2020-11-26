@@ -10,6 +10,7 @@
 		<!-- <script type="text/javascript" src="js/barcodescanner.js"></script> -->
 		
 		<!-- CSS   -->
+		<link href="css/global.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/variables.css" rel="stylesheet" type="text/css" />
 		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
@@ -26,9 +27,26 @@
 	<body>
 		<div id="overlay"></div>
 		<div id="wrapper">
+			<div id="notification_overlay" class="slide_overlay">
+				<h1 id="" class="red menu_title">Benachrichtigungen</h1>
+				<p id="" class="hint menu_hint">Hier findest du verpasste Ereignisse.</p>
+
+				<ul id="notificationlist">
+					<li class="card notifications-card">
+						<div class="notifications-icon"></div>
+						<div>
+							<h2>Danke für’s Installieren!</h2>
+							<small>Die App ist eine Zusammenarbeit der …</small>
+						</div>
+					</li>
+				</ul>
+				<div class="button-placer">
+					<button id="notifications-close" class="classic-btn">Schließen</button>
+				</div>
+			</div>
 			<nav id="nav">
-				<h1 id="menu_title" class="red">Menü</h1>
-				<p id="menu_hint" class="hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 id="" class="red menu_title">Menü</h1>
+				<p id="" class="hint menu_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 				<ul>
 					<li>
 						<a class="card card-programm " href='#'>
@@ -81,11 +99,17 @@
 						</button>
 					</li>
 					<li>
-						<div id="notifications" class="icon">notifications_none</div>
+						<div id="notifications" class="icon">notifications_none
+							<span id="notificationcounter">22</span>
+						</div>
 					</li>
 				</ul>
 			</div>
-			<p>content</p>
+			<!--MAIN-CONTENT -->
+			<main>
+				<h1 class="red page_title">Willkommen</h1>
+				<p class="hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+			</main>
 			<div id="scann-bar">
 				QR-Code scannen
 				<button class="icon" id="button1" onClick="readQR()">close</button>
