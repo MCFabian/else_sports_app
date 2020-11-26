@@ -364,14 +364,14 @@ nav>ul>li>a:hover {
 /* ----------------------------------------------------------------------------------------------------------- Resp Settings */
 
 @media (max-width: 1000px) {
-  nav, #nav, .slide_overlay {
+  nav, #nav, .slide_overlay, .solid_overlay  {
     width: calc(100% - 30px);
     padding: 50px 15px 15px 15px;
   }
 }
 
 @media (max-width: 768px) {
-  nav, #nav, .slide_overlay {
+  nav, #nav, .slide_overlay, .solid_overlay  {
     width: calc(100% - 30px);
     padding: 50px 15px 15px 15px;
   }
