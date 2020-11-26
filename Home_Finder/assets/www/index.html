@@ -1,15 +1,162 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<!-- scripts   -->
 		<script type="text/javascript" src="js/script.js"></script>
-		<script type="text/javascript" src="js/cordova.js"></script>
-		<script type="text/javascript" src="js/barcodescanner.js"></script>
+		<script type="text/javascript" src="js/bb.js"></script>
+		
+		<!-- <script type="text/javascript" src="js/cordova.js"></script> -->
+		<!-- <script type="text/javascript" src="js/barcodescanner.js"></script> -->
+		
+		<!-- CSS   -->
+		<link href="css/global.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/variables.css" rel="stylesheet" type="text/css" />
+		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
+		<link href="css/icons.css" rel="stylesheet" type="text/css" />
+		<link href="css/hamburger.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Viewport   -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</head>
 	
 	<body>
-		<div>
-			<button id="button1" onClick="readQR()">QR-Code scannen</button>
+		<div id="overlay"></div>
+		<div id="wrapper">
+			<div id="notification_overlay" class="slide_overlay">
+				<h1 id="" class="red page_title">Benachrichtigungen</h1>
+				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
+
+				<ul id="notificationlist">
+					<li class="card notifications-card">
+						<div class="notifications-icon"></div>
+						<div>
+							<h2>Danke für’s Installieren!</h2>
+							<small>Die App ist eine Zusammenarbeit der …</small>
+						</div>
+					</li>
+				</ul>
+				<div class="button-placer">
+					<button id="notifications-close" class="classic-btn">Schließen</button>
+				</div>
+			</div>
+			<nav id="nav">
+				<h1 id="" class="red page_title">Menü</h1>
+				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<ul>
+					<li>
+						<a class="card card-programm " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+						</a>
+					</li>
+					<li>
+						<a class="card card-game " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+							<button onclick="readQR()" id="menuscanner">
+								<span class="icon">edit</span>QR-Code scannen
+							</button>
+						</a>
+					</li>
+					<li>
+						<a class="card card-media " href='#'>
+							<h2>Social-Media</h2>
+							<small>Verfolge das Event mit dem Instagram Live-Feed</small>
+						</a>
+					</li>
+				</ul>
+
+				<div id="schools">
+					<div id="logo-row">
+						<div id="else"></div>
+						<div id="fischer"></div>
+					</div>
+					<p class="hint center-text">
+						Eine Zusammenarbeit der <strong>Ernst-Litfaß-Schule</strong> und <strong>Emil-Fischer-Schule.</strong>
+					</p>
+				</div>
+
+				<div id="inner-footer">
+					<ul>
+						<li><a href="pages/privacy.html">Datenschutz</a></li>
+						<li><a href="pages/imprint.html">Impressum</a></li>
+					</ul> 
+				</div>
+			</nav>
+			<!--< NAV-HOLDER>-->
+			<div id="nav-holder">
+				<ul>
+					<li>
+						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--minus toogle" type="button">
+							<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+							</span>
+						</button>
+					</li>
+					<li>
+						<div id="notifications" class="icon">notifications
+							<span id="notificationcounter">22</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--MAIN-CONTENT -->
+			<main id="home">
+				<h1 class="red page_title">Willkommen</h1>
+				<p class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+
+				<ul id="homecards">
+					<li>
+						<a id="programm" class="card" href="#">
+							<div class="card-img-holder">
+								<img src="img/example.png" alt="$">
+							</div>
+							<div class="homecards-text">
+								<div class="homecards-icon" id="programm-icon"></div>
+								<div>
+									<small>Aktuell läuft:</small>
+									<h2>Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<span></span>
+						</a>
+						<a class="card-subtitle" href="#">Danach: <strong>asdasdasdsa</strong><span class="icon">arrow_forward</span></a>
+					</li>
+					<li>
+						<a id="game" class="card" href="#">
+							<div class="homecards-text">
+								<div class="homecards-icon" id="game-icon"></div>
+								<div>
+									<small>Aktuell läuft:</small>
+									<h2>Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<span id="progress-indicator"><div id="percent"></div></span>
+						</a>
+						<a class="card-subtitle" href="#"> <strong>5/10 Fragen gelöst.</strong></a>
+					</li>
+					<li>
+						<a id="media" class="card" href="#">
+							<div class="homecards-text">
+								<div class="homecards-icon" id="media-icon"></div>
+								<div>
+									<h2>Verfolge das Event mit dem <br>Instagram Live-Feed.</h2>
+								</div>
+							</div>
+							
+						</a>
+						<a class="card-subtitle" href="#"> <strong>5/10 Fragen gelöst.</strong></a>
+					</li>
+				</ul>
+
+			</main>
+			<div id="scann-bar">
+				QR-Code scannen
+				<button class="icon" id="button1" onClick="readQR()">close</button>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,13 @@
+:root {
+	--red: #E54B67;
+	--green: #6CC2B5;
+	--blue: #0333DE;
+	--grey: #3b3945;
+	--lightgrey: #b4b0c7;
+}
+
+.center-text {
+	text-align: center;
+}
+
+

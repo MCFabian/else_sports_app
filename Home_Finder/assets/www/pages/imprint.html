@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- scripts   -->
+		<script type="text/javascript" src="../js/script.js"></script>
+		<script type="text/javascript" src="../js/bb.js"></script>
+		
+		<!-- <script type="text/javascript" src="../js/cordova.js"></script> -->
+
+		
+		<!-- CSS   -->
+		<link href="../css/global.css" rel="stylesheet" type="text/css" />
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/variables.css" rel="stylesheet" type="text/css" />
+		<link href="../css/fonts.css" rel="stylesheet" type="text/css" />
+		<link href="../css/icons.css" rel="stylesheet" type="text/css" />
+		<link href="../css/hamburger.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Viewport   -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	</head>
+	
+	<body>
+		<div id="overlay"></div>
+		<div id="wrapper">
+			<div id="notification_overlay" class="slide_overlay">
+				<h1 id="" class="red page_title">Benachrichtigungen</h1>
+				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
+
+				<ul id="notificationlist">
+					<li class="card notifications-card">
+						<div class="notifications-icon"></div>
+						<div>
+							<h2>Danke für’s Installieren!</h2>
+							<small>Die App ist eine Zusammenarbeit der …</small>
+						</div>
+					</li>
+				</ul>
+				<div class="button-placer">
+					<button id="notifications-close" class="classic-btn">Schließen</button>
+				</div>
+			</div>
+			<nav id="nav">
+				<h1 id="" class="red page_title">Menü</h1>
+				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<ul>
+					<li>
+						<a class="card card-programm " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+						</a>
+					</li>
+					<li>
+						<a class="card card-game " href='#'>
+							<h2>Programm-Info</h2>
+							<small>Erfahre mehr über die Acts.</small>
+							<button onclick="readQR()" id="menuscanner">
+								<span class="icon">edit</span>QR-Code scannen
+							</button>
+						</a>
+					</li>
+					<li>
+						<a class="card card-media " href='#'>
+							<h2>Social-Media</h2>
+							<small>Verfolge das Event mit dem Instagram Live-Feed</small>
+						</a>
+					</li>
+				</ul>
+
+				<div id="schools">
+					<div id="logo-row">
+						<div id="else"></div>
+						<div id="fischer"></div>
+					</div>
+					<p class="hint center-text">
+						Eine Zusammenarbeit der <strong>Ernst-Litfaß-Schule</strong> und <strong>Emil-Fischer-Schule.</strong>
+					</p>
+				</div>
+
+				<div id="inner-footer">
+					<ul>
+						<li><a href="privacy.html">Datenschutz</a></li>
+						<li><a href="imprint.html">Impressum</a></li>
+					</ul> 
+				</div>
+			</nav>
+			<!--< NAV-HOLDER>-->
+			<div id="nav-holder">
+				<ul>
+					<li>
+						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--minus toogle" type="button">
+							<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+							</span>
+						</button>
+					</li>
+					<li>
+						<div id="notifications" class="icon">notifications
+							<span id="notificationcounter">22</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--MAIN-CONTENT -->
+			<main id="home">
+				<h1 class="red page_title">Impressum</h1>
+				<p class="hint page_hint">Herausgeber und Verantwortlicher der App</p>
+
+                <div class="solid_overlay">
+                    <div class="solid_overlay_inner">
+                        <strong>Angaben</strong><br>
+                        <p class="hint">
+                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+                        </p>
+                        <strong>Angaben</strong><br>
+                        <p class="hint">
+                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+                        </p>
+                        <div class="button-placer">
+                            <a href="../index.html" class="classic-btn">Zurück zu Home</a>
+                        </div>
+                    </div>
+                </div>
+
+			</main>
+		</div>
+	</body>
+</html>
