@@ -35,6 +35,10 @@ body {
 	font-weight: 400;
 	box-sizing: border-box;
 	margin: 0;
+	-ms-user-select: None;
+	-moz-user-select: None;
+	-webkit-user-select: None;
+	user-select: None; 
 }
 
 hr {
@@ -141,6 +145,11 @@ p.hint {
 	color: var(--blue);
 }
 
+.card-media {
+	background: #6CC2B5;
+
+}
+
 #menuscanner {
 	font-weight: 600;
 }
@@ -191,7 +200,21 @@ p.hint {
 
 .card-game::after {
 	content: "";
-	background-image: url("../img/menu_programm_pattern.png");
+	background-image: url("../img/menu_game_pattern.png");
+	right: 15px;
+	bottom: 37px;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: cover;
+	height: 67px;
+	width: 84px;
+	position: absolute;
+	opacity: .5;
+}
+
+.card-media::after {
+	content: "";
+	background-image: url("../img/menu_media_pattern.png");
 	right: 15px;
 	bottom: 0;
 	background-repeat: no-repeat;
