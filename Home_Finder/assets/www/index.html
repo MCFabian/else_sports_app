@@ -20,16 +20,14 @@
 		<!-- Viewport   -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
 	</head>
 	
 	<body>
 		<div id="overlay"></div>
 		<div id="wrapper">
 			<div id="notification_overlay" class="slide_overlay">
-				<h1 id="" class="red menu_title">Benachrichtigungen</h1>
-				<p id="" class="hint menu_hint">Hier findest du verpasste Ereignisse.</p>
+				<h1 id="" class="red page_title">Benachrichtigungen</h1>
+				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
 
 				<ul id="notificationlist">
 					<li class="card notifications-card">
@@ -45,8 +43,8 @@
 				</div>
 			</div>
 			<nav id="nav">
-				<h1 id="" class="red menu_title">Menü</h1>
-				<p id="" class="hint menu_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 id="" class="red page_title">Menü</h1>
+				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 				<ul>
 					<li>
 						<a class="card card-programm " href='#'>
@@ -99,16 +97,49 @@
 						</button>
 					</li>
 					<li>
-						<div id="notifications" class="icon">notifications_none
+						<div id="notifications" class="icon">notifications
 							<span id="notificationcounter">22</span>
 						</div>
 					</li>
 				</ul>
 			</div>
 			<!--MAIN-CONTENT -->
-			<main>
+			<main id="home">
 				<h1 class="red page_title">Willkommen</h1>
-				<p class="hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<p class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+
+				<ul id="homecards">
+					<li>
+						<a id="programm" class="card" href="#">
+							<div class="card-img-holder">
+								<img src="img/example.png" alt="$">
+							</div>
+							<div class="homecards-text">
+								<div class="homecards-icon" id="programm-icon"></div>
+								<div>
+									<small>Aktuell läuft:</small>
+									<h2>Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<span></span>
+						</a>
+						<a class="card-subtitle" href="#">Danach: <strong>asdasdasdsa</strong><span class="icon">arrow_forward</span></a>
+					</li>
+					<li>
+						<a id="game" class="card" href="#">
+							<div class="homecards-text">
+								<div class="homecards-icon" id="programm-icon"></div>
+								<div>
+									<small>Aktuell läuft:</small>
+									<h2>Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<input value="20" type="range" id="progress-indicator">
+						</a>
+						<a class="card-subtitle" href="#"> <strong>5/10 Fragen gelöst.</strong></a>
+					</li>
+				</ul>
+
 			</main>
 			<div id="scann-bar">
 				QR-Code scannen

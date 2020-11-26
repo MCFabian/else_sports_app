@@ -3,7 +3,6 @@ var UD_MENU_OPEN = false;
 
 function toggleMenu() {
     "use strict";
-    console.log("Changing menu status");
     UD_MENU_OPEN = !UD_MENU_OPEN;
     document.getElementById("bb-btn").classList.toggle("is-active", UD_MENU_OPEN);
     document.getElementById("nav").classList.toggle("nav-active", UD_MENU_OPEN);
@@ -44,14 +43,31 @@ window.addEventListener("load", function(){
     })
 
     function callnotifications(){
+        //CHECK AND CLOSE MENU IF OPEN
+        if(document.getElementById("nav").classList.contains("nav-active")){
+            toggleMenu();
+        }
+
+        else {}
         document.getElementById("overlay").classList.toggle("overlay-active");
         notificationoverlay.classList.toggle("slide_overlay-active");
-
     }
 
     //CHECK QUANTITY OF NOTIFICATIONS
     var notificationquantity = document.getElementById("notificationlist").childElementCount;
     notificationcounter.innerHTML = (notificationquantity);
+
+    //CHANGE NOTIFICATIONS ICON IF MORE THEN 1
+    if (notificationquantity == 0) {
+        notification.innerHTML = ("notifications_none");    
+    } 
+    
+    else {
+        //
+    }
+
+
+
 
 
 

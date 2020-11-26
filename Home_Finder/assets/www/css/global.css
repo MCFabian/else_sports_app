@@ -12,6 +12,12 @@ body {
 
 main {
     padding: 95px 30px 15px 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+main#home {
+    overflow: hidden;
 }
 
 hr {

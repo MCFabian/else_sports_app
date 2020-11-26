@@ -30,22 +30,17 @@
 
 
 
-.menu_title {
-	position: relative;
-	z-index: 0;
-	padding: 0 15px;
-}
-
 .page_title {
 	position: relative;
 	z-index: 0;
-}
-
-.menu_hint {
 	padding: 0 15px;
 }
 
-.menu_title::after, .page_title::after  {
+.page_hint {
+	padding: 0 15px;
+}
+
+.page_title::after {
 	background-image: url("../img/menu_pattern.png");
 	background-position: left;
 	background-size: contain;
@@ -66,6 +61,21 @@
 	width: calc(100% - 30px);
 	display: flex;
 	flex-direction: column;
+}
+
+.card-img-holder {
+	height: 100px;
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.card-img-holder img {
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 .card-programm {
@@ -191,3 +201,83 @@
 	padding: 0 15px 15px 15px;
 	border-bottom: 1px solid #F3F4F8;
 }
+
+
+#homecards {
+	list-style: none;
+	padding: 15px 0 0 0;
+	width: 100%;
+	margin: auto auto 0 auto;
+}
+
+#homecards li {
+	margin-bottom: 15px;
+}
+
+.card-subtitle {
+	padding: 0 15px;
+	font-size: 14px;
+	color: var(--lightgrey);
+}
+
+.card-subtitle span {
+	margin-left: 5px;
+	color: var(--green);
+	vertical-align: text-top;
+}
+
+#programm, #game, #media {
+	padding: 0;
+	width: 100%;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+#game {
+	background: var(--red);
+	color: #fff;
+}
+
+#programm>span {
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background: var(--blue);
+	height: 5px;
+	display: block;
+}
+
+.homecards-text {
+	padding: 15px;
+	background: #fff;
+	display: flex;
+	flex-wrap: row;
+}
+
+.homecards-text small {
+	color: var(--lightgrey);
+}
+
+.homecards-text h2 {
+	color: var(--grey);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.homecards-icon {
+    height: 36px;
+	width: 36px;
+	min-width: 36px;
+    border-radius: 15px;
+    text-align: center;
+    margin: auto 15px auto 0;
+    padding: 4px;
+    background: #CBD5F8;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;	
+}
+
+#programm-icon {
+	background-image: url("../img/emoji/waving.png");
+}
+
