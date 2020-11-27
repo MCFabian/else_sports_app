@@ -17,10 +17,11 @@ main {
     background-image: url("../img/background_pattern.png");
     background-position: 0 85%;
     background-size: 120px;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	overflow: hidden;
 }
 
-main#home {
+main#home, main#act-list {
 	overflow: hidden;
 	padding-bottom: 85px;
 }
@@ -73,7 +74,7 @@ main#home {
 
 hr {
 	height: 1px;
-	background: #F3F4F8;
+	background: #DEDEF5;
 	border: none;
 	width: 100%;
 	display: block;

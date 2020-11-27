@@ -12,7 +12,7 @@ a {
 /* ----------------------------------------------------------------------------------------------------------- BurgerStyles */
 
 .hamburger {
-
+  height: 20px;
   z-index: 5;
   display: inline-block;
   cursor: pointer;
@@ -36,7 +36,7 @@ a {
 }
 
 .hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before { 
+.hamburger.is-active .hamburger-inner::before, .hamburger-inner::after { 
   background-color: var(--grey); 
 }
 
@@ -44,15 +44,16 @@ a {
   width: 25px;
   display: inline-block;
   position: relative; 
+  top: -15px;
 }
 
 .hamburger-inner {
   display: block;
   top: 50%;
-  width: 25px;
+  width: 20px;
   margin-top: -2px;
 }
-.hamburger-inner, .hamburger-inner::before {
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   height: 2px;
   background-color: var(--grey);
   border-radius: 0px;
@@ -62,13 +63,13 @@ a {
   transition-timing-function: ease;
 }
 
-.hamburger-inner::before {
+.hamburger-inner::before, .hamburger-inner::after {
   content: "";
-  width: 25px;
+  width: 20px;
   display: block; 
 }
 
-.hamburger-inner::before {
+.hamburger-inner::before, .hamburger-inner::after {
   top: -10px;
 }
 
@@ -78,23 +79,6 @@ a {
 
 .hamburger-box:hover>.hamburger-inner, .hamburger-box:hover>.hamburger-inner::before, .hamburger-box:hover>.hamburger-inner::after {
   background: var(--grey);
-}
-
-.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
-  transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear;
-}
-
-.hamburger--minus.is-active .hamburger-inner::before, .hamburger--minus.is-active .hamburger-inner::after {
-  opacity: 0;
-  transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear;
-}
-
-.hamburger--minus.is-active .hamburger-inner::before {
-  top: 0; 
-}
-
-.hamburger--minus.is-active .hamburger-inner::after {
-  bottom: 0;
 }
 
 /* ----------------------------------------------------------------------------------------------------------- NAV Settings */
@@ -377,3 +361,26 @@ nav>ul>li>a:hover {
     padding: 50px 15px 15px 15px;
   }
 }
+
+
+.hamburger--spring .hamburger-inner {
+  top: 4px;
+  transition: background-color 0s 0.13s linear; }
+  .hamburger--spring .hamburger-inner::before {
+    top: 6px;
+    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--spring .hamburger-inner::after {
+    top: 12px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spring.is-active .hamburger-inner {
+  transition-delay: 0.22s;
+  background-color: transparent !important; }
+  .hamburger--spring.is-active .hamburger-inner::before {
+    top: 0;
+    transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--spring.is-active .hamburger-inner::after {
+    top: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(-45deg); }

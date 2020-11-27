@@ -73,8 +73,26 @@ window.addEventListener("load", function(){
 
 
 
+
 })
 
 
 
-
+// FILTER ACT-LIST BY SEARCH
+function tablefilter() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("acts");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        searchfortext = li[i].getElementsByClassName("searchfortext")[0];
+        txtValue = searchfortext.textContent || searchfortext.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+            
+        }
+    }
+}
