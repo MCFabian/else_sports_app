@@ -1,5 +1,6 @@
 // JavaScript Document
 var UD_MENU_OPEN = false;
+var myglobal = 0;
 
 function toggleMenu() {
     "use strict";
@@ -95,4 +96,19 @@ function tablefilter() {
             
         }
     }
+
+
+
+    document.getElementById("notifications").addEventListener("click", function(){
+        myglobal = 1 + 1;
+        alert(myglobal);
+    
+    })
+
+
+
 }
+
+
+
+
