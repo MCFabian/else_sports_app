@@ -21,7 +21,8 @@ main {
 }
 
 main#home {
-    overflow: hidden;
+	overflow: hidden;
+	padding-bottom: 85px;
 }
 
 .solid_overlay {

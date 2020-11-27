@@ -11,7 +11,7 @@
 	text-align: center;
 	color: #fff;
 	font-size: 14px;
-	box-shadow: 0px 0px 32px 0px rgba(165, 165, 165, 0.3);
+	box-shadow: 20px 20px 32px 40px rgb(255, 255, 255);
 }
 #scann-bar button {
 	position: absolute;
@@ -81,6 +81,13 @@
 .card-programm {
 	background: var(--blue);
 	position: relative;
+	overflow: hidden;
+}
+
+.card-home {
+	background: var(--grey);
+	position: relative;
+	overflow: hidden;
 }
 
 .card-game {
@@ -89,6 +96,7 @@
 	padding: 0;
 	padding-top: 15px;
 	width: 100%;
+	overflow: hidden;
 }
 
 .card-game h2, .card-game small, .card-game button {
@@ -109,7 +117,7 @@
 
 .card-media {
 	background: #6CC2B5;
-
+	overflow: hidden;
 }
 
 #menuscanner {
@@ -142,6 +150,20 @@
 
 #fischer {
 	background-image: url("../img/menu_fischer.png");
+}
+
+.card-home::after {
+	content: "home";
+	font-family: 'Material Icons';
+	right: 15px;
+	color: #fff;
+	font-size: 70px;
+	bottom: -25px;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: cover;
+	position: absolute;
+	opacity: .3;
 }
 
 .card-programm::after {
