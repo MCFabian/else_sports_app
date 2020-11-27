@@ -59,6 +59,16 @@ main#home {
 	margin-bottom: 15px;
   }
 
+  .solid_overlay_inner ul {
+	  list-style-position: inside;
+	  padding: 0;
+  }
+
+  .solid_overlay_inner ul li {
+	  font-size: 14px;
+	  color: var(--lightgrey);
+  }
+
 
 hr {
 	height: 1px;
@@ -100,6 +110,11 @@ p {
 
 p.hint {
 	color: var(--lightgrey);
+}
+
+.link {
+	color: var(--red);
+	font-weight: 600;
 }
 
 .button-placer {
