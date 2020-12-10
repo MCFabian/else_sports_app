@@ -134,6 +134,29 @@ window.addEventListener("load", function(){
         pagehint.innerHTML = homehint;
     });
 
+    /* OPEN  ACTS */
+    var actstrigger = document.querySelectorAll(".acts");
+    var actswindow = document.getElementById("actswindow");
+    var actsout = document.getElementById("actsout");
+
+    for (var i = 0; i < actstrigger.length; i++) {
+        actstrigger[i].addEventListener("click", function(){
+            actswindow.classList.toggle("open");
+            pagetitle.innerHTML = "Programm";
+            pagehint.innerHTML = "Erfahre alles über die geplanten Acts.";
+            
+            if(document.getElementById("nav").classList.contains("nav-active")){
+                toggleMenu();
+            }
+
+    })};
+
+        actsout.addEventListener("click", function(){
+            actswindow.classList.toggle("open");
+            pagetitle.innerHTML = hometitle;
+            pagehint.innerHTML = homehint;
+    }); 
+
 
 
 });

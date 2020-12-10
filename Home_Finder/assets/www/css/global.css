@@ -21,7 +21,7 @@ main {
 	overflow: hidden;
 }
 
-main#home, main#act-list {
+main#home {
 	overflow: hidden;
 	padding-bottom: 85px;
 }
