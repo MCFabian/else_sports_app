@@ -23,11 +23,12 @@
 	</head>
 	
 	<body>
+		<!-- OVERLAY -->
 		<div id="overlay"></div>
 		<div id="wrapper">
 			<div id="notification_overlay" class="slide_overlay">
-				<h1 id="" class="red page_title">Benachrichtigungen</h1>
-				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
+				<h1 class="red pagetitle">Benachrichtigungen</h1>
+				<p class="hint pagehint">Hier findest du verpasste Ereignisse.</p>
 
 				<ul id="notificationlist">
 					<li class="card notifications-card">
@@ -43,8 +44,8 @@
 				</div>
 			</div>
 			<nav id="nav">
-				<h1 id="" class="red page_title">Menü</h1>
-				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 class="red pagetitle">Menü</h1>
+				<p class="hint pagehint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 				<ul>
 					<li>
 						<a class="card card-home" href='index.html'>
@@ -86,8 +87,8 @@
 
 				<div id="inner-footer">
 					<ul>
-						<li><a href="pages/privacy.html">Datenschutz</a></li>
-						<li><a href="pages/imprint.html">Impressum</a></li>
+						<li><a id="privacy" href="#">Datenschutz</a></li>
+						<li><a id="imprint" href="#">Impressum</a></li>
 					</ul> 
 				</div>
 			</nav>
@@ -110,9 +111,117 @@
 			</div>
 			<!--MAIN-CONTENT -->
 			<main id="home">
-				<h1 class="red page_title">Willkommen</h1>
-				<p class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 id="pagetitle" class="red pagetitle">Willkommen</h1>
+				<p id="pagehint" class="hint pagehint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 
+
+
+
+
+				<!-- IMPRESSUM -->
+                <div id="imprintwindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+                        <strong>Angaben gemäß § 5 TM</strong><br>
+                        <p class="hint">
+							Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+						</p>
+						<strong>Fabian Rauer</strong>
+						<p class="hint">
+							Schiller-Straße 18<br>
+							03222 Lübbenau<br>
+							E-Mail: <a class="link" href="mailto:info@fabianr.de">info[at]fabianr.de</a>
+						</p>
+						<p class="hint">
+							Die verantwortliche Stelle entscheidet allein über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.). 
+						</p>
+                        <strong>Angaben</strong><br>
+                        <p class="hint">
+                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+						</p>
+						<strong>Bild- und Videomaterial</strong>
+						<p class="hint">
+							Das Urheberrecht des hier ausgestellten Video- als auch Bildmaterial unterliegt allein Fabian Rauer.
+						</p>
+						<p class="hint">
+							Ohne einer schriftlichen Zustimmung des Betreibers ist es nicht gestattet, dass ausgestellte Bild- oder Videomaterial öffentlich darzustellen, zu verwenden oder mit einem kommerziellen Nutzen weiterzuverwenden. Ohne besagtes Einverständnis werden rechtliche Schritte und Konsequenzen drohen	
+						</p>
+                        <div class="button-placer">
+                            <a href="#" id="imprintout" class="classic-btn">Zurück zu Home</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+				<!-- DATENSCHUTZ -->
+				<div id="privacywindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+                        <strong>Allgemeiner Hinweis & Pflichtinformationen</strong><br>
+                        <p class="hint">
+                            Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+						</p>
+						<strong>Fabian Rauer</strong><br>
+						<p class="hint">
+							Schiller-Straße 18<br>
+							03222 Lübbenau<br>
+							E-Mail: <a class="link" href="mailto:info@fabianr.de">info[at]fabianr.de</a>
+						</p>
+						<p class="hint">
+							Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.). 
+						</p>
+						<strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong>
+						<p class="hint">
+							Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt. 
+						</p>
+						<strong>
+							Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde
+						</strong>
+						<p class="hint">
+							Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: 
+							<br><br>
+							<a class="link" href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html.</a>
+						</p>
+						<strong>Recht auf Datenübertragbarkeit</strong>
+						<p class="hint">
+							Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist. 
+						</p>
+						<strong>Recht auf Auskunft, Berichtigung, Sperrung, Löschung</strong>
+						<p class="hint">
+							Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.
+						</p>
+						<strong>SSL- bzw. TLS-Verschlüsselung</strong>
+						<p class="hint">
+							Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über diese Website übermitteln, für Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile. 
+						</p>
+						<strong>Server-Log-Dateien</strong>
+						<p class="hint">In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch Informationen, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+						</p>
+						<ul>
+							<li>Besuchte Seite auf unserer Domain</li>
+							<li>Datum und Uhrzeit der Serveranfrage</li>
+							<li>Browsertyp und Browserversion</li>
+							<li>Verwendetes Betriebssystem</li>
+							<li>Referrer URL</li>
+							<li>Hostname des zugreifenden Rechners</li>
+							<li>IP-Adresse</li>
+						</ul>
+						<p class="hint">
+							Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet. 
+						</p>
+
+                        <div class="button-placer">
+                            <a href="#" id="privacyout" class="classic-btn">Zurück zu Home</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+				<!-- HOME -->
 				<ul id="homecards">
 					<li>
 						<a id="programm" class="card" href="#">
@@ -155,8 +264,8 @@
 						</a>
 					</li>
 				</ul>
-
 			</main>
+			<!-- CODESANNER FIX -->
 			<div id="scann-bar">
 				QR-Code scannen
 				<button class="icon" id="button1" onClick="readQR()">close</button>

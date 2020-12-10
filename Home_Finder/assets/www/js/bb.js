@@ -1,6 +1,5 @@
 // JavaScript Document
 var UD_MENU_OPEN = false;
-var myglobal = 0;
 
 function toggleMenu() {
     "use strict";
@@ -66,15 +65,6 @@ window.addEventListener("load", function(){
     else {
         //
     }
-
-
-
-
-
-
-
-
-
 })
 
 
@@ -97,18 +87,55 @@ function tablefilter() {
         }
     }
 
-
-
-    document.getElementById("notifications").addEventListener("click", function(){
-        myglobal = 1 + 1;
-        alert(myglobal);
-    
-    })
-
-
-
 }
 
 
+window.addEventListener("load", function(){
+
+    var pagetitle = document.getElementById("pagetitle");
+    var pagehint = document.getElementById("pagehint");
+    var hometitle = "Willkommen";
+    var homehint = "Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
+
+    /* OPEN  IMPRINT */
+    var imprinttrigger = document.getElementById("imprint");
+    var imprintwindow = document.getElementById("imprintwindow");
+    var imprintout = document.getElementById("imprintout");
+
+    imprinttrigger.addEventListener("click", function(){
+        imprintwindow.classList.toggle("open");
+        pagetitle.innerHTML = "Impressum";
+        pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+        toggleMenu(); // Close the menu
+    });
+
+    imprintout.addEventListener("click", function(){
+        imprintwindow.classList.toggle("open");
+        pagetitle.innerHTML = hometitle;
+        pagehint.innerHTML = homehint;
+    });
+
+
+    /* OPEN  PRIVACY */
+    var privacytrigger = document.getElementById("privacy");
+    var privacywindow = document.getElementById("privacywindow");
+    var privacyout = document.getElementById("privacyout");
+
+    privacytrigger.addEventListener("click", function(){
+        privacywindow.classList.toggle("open");
+        pagetitle.innerHTML = "Datenschutz";
+        pagehint.innerHTML = "Erklärung und Einstellungen";
+        toggleMenu(); // Close the menu
+    });
+
+    privacyout.addEventListener("click", function(){
+        privacywindow.classList.toggle("open");
+        pagetitle.innerHTML = hometitle;
+        pagehint.innerHTML = homehint;
+    });
+
+
+
+});
 
 

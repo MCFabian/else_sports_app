@@ -28,17 +28,17 @@
 	border-radius: 20px;
 }
 
-.page_title {
+.pagetitle {
 	position: relative;
 	z-index: 0;
 	padding: 0 15px;
 }
 
-.page_hint {
+.pagehint {
 	padding: 0 15px;
 }
 
-.page_title::after {
+.pagetitle::after {
 	background-image: url("../img/menu_pattern.png");
 	background-position: left;
 	background-size: contain;
