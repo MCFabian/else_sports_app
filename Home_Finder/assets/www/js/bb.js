@@ -135,6 +135,24 @@ window.addEventListener("load", function(){
         pagehint.innerHTML = homehint;
     });
 
+    /* OPEN  QUIZ */
+    var quiztrigger = document.getElementById("game");
+    var quizwindow = document.getElementById("quizwindow");
+    var quizout = document.getElementById("quizout");
+
+    quiztrigger.addEventListener("click", function(){
+        quizwindow.classList.toggle("open");
+        pagetitle.innerHTML = "Datenschutz";
+        pagehint.innerHTML = "Erklärung und Einstellungen";
+        toggleMenu(); // Close the menu
+    });
+
+    quizout.addEventListener("click", function(){
+        quizwindow.classList.toggle("open");
+        pagetitle.innerHTML = hometitle;
+        pagehint.innerHTML = homehint;
+    });
+
     /* OPEN  ACTS */
     var actstrigger = document.querySelectorAll(".acts");
     var actswindow = document.getElementById("actswindow");

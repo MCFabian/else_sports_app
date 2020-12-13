@@ -1,0 +1,111 @@
+  /* ------------------------------ Inputs ------------------------------  */
+
+/* ----------  General ---------  */
+input, label, textarea, select {
+	display: flex;
+	flex-wrap: wrap;
+	display: -ms-flexbox;
+	flex-direction: column;
+	transition: 0.3s;
+	margin: 10px 0px;
+  }
+
+  input[type=radio] {
+	visibility: hidden;
+	display: none;
+}
+  
+  .input-clearer {
+	display: inline-block;
+	color: #484848;
+	padding: 5px;
+	transition: 0.3s;
+	vertical-align: middle;
+	font-size: 1.3rem;
+	margin: 0 0 0 10px;
+	padding: 5px;
+  }
+  
+  .input-clearer:hover {
+	color: var(--delete-c);
+	animation: none !important;
+	background: #eeeeee ;
+	border-radius: 100%;
+  }
+  
+
+::placeholder {
+	color: var(--divider);
+}
+
+  /* ----------  Label ---------  */
+  
+  label {
+	font-family: 'Source Sans Pro';
+	color: #888888;
+	font-size: 1.05rem;
+	font-weight: 600;
+	padding-top: 15px;
+  }
+
+  input {
+	color: #484848;
+	background: #fff;
+	padding: 12px 5px 12px 12px;
+	font-size: 0.95rem;
+	border: 1px solid #e6e6e6;
+	font-family: 'Source Sans Pro',Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	min-width: 50%;
+	max-width: 100%;
+  }
+
+
+.input-lg {
+	width: 75%;
+  }
+
+  .input-full {
+	width: 100%;
+  }
+  
+  .input-lg-2 {
+	width: 92%;
+  }
+  
+  .select-lg {
+	width: 75%;
+  }
+  
+  input:hover {
+	border-color: #818181;
+  }
+  
+  input:active, input:focus {
+	border-color: var(--blue);       /*Wir durch User-Color überschrieben*/
+  }
+
+  select {
+	color: #949494;
+	background: #fff;
+	padding: 12px 5px 12px 12px;
+	font-size: 0.95rem;
+	border: 1px solid #e6e6e6;
+	font-family: 'Source Sans Pro',Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	color: #949494;
+	min-width: 140px;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../img/select-arrow.png");
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	min-width: 50%;
+	max-width: 100%;
+  }
+  
+  select:hover, select:active {
+	border-color: var(--blue);   /*Wir durch User-Color überschrieben*/
+  }
