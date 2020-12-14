@@ -138,16 +138,24 @@ window.addEventListener("load", function(){
     });
 
     /* OPEN  QUIZ */
-    var quiztrigger = document.getElementById("game");
+    var quiztrigger = document.querySelectorAll(".quiztrigger");
     var quizwindow = document.getElementById("quizwindow");
     var quizout = document.getElementById("quizout");
 
-    quiztrigger.addEventListener("click", function(){
-        quizwindow.classList.toggle("open");
-        pagetitle.innerHTML = "Gewinnspiel";
-        pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
-        toggleMenu(); // Close the menu
-    });
+    for (var i = 0; i < quiztrigger.length; i++) {
+        quiztrigger[i].addEventListener("click", function(){
+            quizwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Gewinnspiel";
+            pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
+
+            if(nav.classList.contains("nav-active")){
+                toggleMenu();
+            }
+
+            else{
+                //
+            }
+    })};
 
     quizout.addEventListener("click", function(){
         quizwindow.classList.toggle("open");
