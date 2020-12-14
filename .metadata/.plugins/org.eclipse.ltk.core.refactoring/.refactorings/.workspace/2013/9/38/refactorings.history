@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ELSe_Finder&apos; to &apos;super&apos;" description="Rename resource &apos;ELSe_Finder&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ELSe_Finder" name="super" stamp="1379802875713" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;super&apos; to &apos;ELSeFinder&apos;" description="Rename resource &apos;super&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/super" name="ELSeFinder" stamp="1379803601750" updateReferences="true"/>
+</session>

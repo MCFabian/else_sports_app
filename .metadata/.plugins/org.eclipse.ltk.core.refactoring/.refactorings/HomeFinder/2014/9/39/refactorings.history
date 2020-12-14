@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HomeFinder/assets/www/js/ELSeFinder.js&apos; to &apos;script.js&apos;" description="Rename resource &apos;ELSeFinder.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="assets/www/js/ELSeFinder.js" name="script.js" stamp="1411915381160" updateReferences="true"/>
+</session>

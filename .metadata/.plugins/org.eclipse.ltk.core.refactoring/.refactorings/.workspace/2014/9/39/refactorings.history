@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ELSeFinder&apos; to &apos;HomeFinder&apos;" description="Rename resource &apos;ELSeFinder&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ELSeFinder" name="HomeFinder" stamp="1411913034306" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;HomeFinder/assets/www/Unbenannt&apos;" deleteContents="false" description="Delete resource &apos;HomeFinder/assets/www/Unbenannt&apos;" element1="/HomeFinder/assets/www/Unbenannt" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1411915412691"/>
+</session>

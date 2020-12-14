@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;InfoMap/assets/www/img/grundriss2.gif&apos; to &apos;grundriss.gif&apos;" description="Rename resource &apos;grundriss2.gif&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="assets/www/img/grundriss2.gif" name="grundriss.gif" stamp="1374014903481" updateReferences="true"/>
+</session>
