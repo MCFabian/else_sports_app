@@ -1,6 +1,5 @@
 // JavaScript Document
 var UD_MENU_OPEN = false;
-var myglobal = 0;
 
 function toggleMenu() {
     "use strict";
@@ -29,11 +28,12 @@ window.addEventListener("load", function(){
 
 window.addEventListener("load", function(){
     //OPEN NOTIFICATIONS
-
+    var burgerbutton = document.getElementById("bb-btn");
     var notification = document.getElementById("notifications");
     var notificationcounter = document.getElementById("notificationcounter");
     var notificationoverlay = document.getElementById("notification_overlay");
     var notificationsclose = document.getElementById("notifications-close");
+
     
     notification.addEventListener("click", function(){  //CHANGE To TOUCHSTART
         callnotifications();
@@ -44,9 +44,12 @@ window.addEventListener("load", function(){
     })
 
     function callnotifications(){
+        burgerbutton.classList.toggle("inactive");
+
         //CHECK AND CLOSE MENU IF OPEN
         if(document.getElementById("nav").classList.contains("nav-active")){
             toggleMenu();
+
         }
 
         else {}
@@ -66,15 +69,6 @@ window.addEventListener("load", function(){
     else {
         //
     }
-
-
-
-
-
-
-
-
-
 })
 
 
@@ -97,18 +91,144 @@ function tablefilter() {
         }
     }
 
-
-
-    document.getElementById("notifications").addEventListener("click", function(){
-        myglobal = 1 + 1;
-        alert(myglobal);
-    
-    })
-
-
-
 }
 
 
+window.addEventListener("load", function(){
+    const maincontent = document.getElementById("home");
+    var pagetitle = document.getElementById("pagetitle");
+    var pagehint = document.getElementById("pagehint");
+    var hometitle = "Willkommen";
+    var homehint = "Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
+    var barcodescanner = document.getElementById("scann-bar");
+
+    /* OPEN  IMPRINT */
+    var imprinttrigger = document.getElementById("imprint");
+    var imprintwindow = document.getElementById("imprintwindow");
+    var imprintout = document.getElementById("imprintout");
+
+    imprinttrigger.addEventListener("click", function(){
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+            maincontent.style.display="block";
+            barcodescanner.style.display ="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+            toggleMenu(); // Close the menu
+        }
+
+        else{
+            maincontent.style.display="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+            toggleMenu(); // Close the menu
+        }
+    });
+
+    imprintout.addEventListener("click", function(){
+        imprintwindow.classList.toggle("open");
+        pagetitle.innerHTML = hometitle;
+        pagehint.innerHTML = homehint;
+    });
+
+
+    /* OPEN  PRIVACY */
+    var privacytrigger = document.getElementById("privacy");
+    var privacywindow = document.getElementById("privacywindow");
+    var privacyout = document.getElementById("privacyout");
+
+    privacytrigger.addEventListener("click", function(){
+        maincontent.style.display="block";
+        barcodescanner.style.display ="block";
+        privacywindow.classList.toggle("open");
+        pagetitle.innerHTML = "Datenschutz";
+        pagehint.innerHTML = "Erklärung und Einstellungen";
+        toggleMenu(); // Close the menu
+    });
+
+    privacyout.addEventListener("click", function(){
+        
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+            privacywindow.classList.toggle("open");
+            pagetitle.innerHTML = hometitle;
+            pagehint.innerHTML = homehint;
+        }
+
+        else{
+            privacywindow.classList.toggle("open");
+            pagetitle.innerHTML = hometitle;
+            pagehint.innerHTML = homehint;
+        }
+    });
+
+    /* OPEN  QUIZ */
+    var quiztrigger = document.querySelectorAll(".quiztrigger");
+    var quizwindow = document.getElementById("quizwindow");
+    var quizout = document.getElementById("quizout");
+
+    for (var i = 0; i < quiztrigger.length; i++) {
+        quiztrigger[i].addEventListener("click", function(){
+            maincontent.style.display="block";
+            barcodescanner.style.display ="block";
+            quizwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Gewinnspiel";
+            pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
+
+            if(actswindow.style.display = "block"){
+                actswindow.style.display = "none"
+
+                if(nav.classList.contains("nav-active")){
+                    toggleMenu();
+                }
+    
+                else{
+                    //
+                }
+
+            }
+
+            else{
+
+            }
+
+
+    })};
+
+    quizout.addEventListener("click", function(){
+        quizwindow.classList.toggle("open");
+        pagetitle.innerHTML = hometitle;
+        pagehint.innerHTML = homehint;
+    });
+
+    /* OPEN  ACTS */
+    var actstrigger = document.querySelectorAll(".acts");
+    var actswindow = document.getElementById("actswindow");
+    var actsout = document.getElementById("actsout");
+
+    for (var i = 0; i < actstrigger.length; i++) {
+        actstrigger[i].addEventListener("click", function(){
+            barcodescanner.style.display ="none";
+            actswindow.style.display="block";
+            maincontent.style.display="none";
+            
+            if(document.getElementById("nav").classList.contains("nav-active")){
+                toggleMenu();
+            }
+    })};
+
+    actsout.addEventListener("click", function(){
+        barcodescanner.style.display ="block";
+        maincontent.style.display="block";
+        actswindow.style.display="none";
+    }); 
+
+
+
+
+
+});
 
 

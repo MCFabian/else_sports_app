@@ -11,7 +11,7 @@ body {
 }
 
 main {
-    padding: 95px 30px 15px 30px;
+    padding: 85px 30px 15px 30px;
     overflow-y: auto;
     overflow-x: hidden;
     background-image: url("../img/background_pattern.png");
@@ -21,9 +21,13 @@ main {
 	overflow: hidden;
 }
 
-main#home, main#act-list {
+main#home, main#actswindow {
 	overflow: hidden;
-	padding-bottom: 85px;
+	padding-bottom: 100px;
+}
+
+#actswindow {
+	display: none;
 }
 
 .solid_overlay {
@@ -32,7 +36,7 @@ main#home, main#act-list {
 	transition: 0.4s;
 	flex-direction: column;
 	right: 0;
-	bottom: 0;
+	bottom: -100%;
 	position: fixed;
 	height: 65%; 
 	display: block;
@@ -41,6 +45,12 @@ main#home, main#act-list {
 	padding: 50px 30px 0 30px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	z-index: 1;
+	transition: bottom .3s ease-in-out;
+  }
+
+  .solid_overlay.open {
+	bottom: 0; 
   }
 
   .solid_overlay_inner {
