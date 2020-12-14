@@ -108,10 +108,23 @@ window.addEventListener("load", function(){
     var imprintout = document.getElementById("imprintout");
 
     imprinttrigger.addEventListener("click", function(){
-        imprintwindow.classList.toggle("open");
-        pagetitle.innerHTML = "Impressum";
-        pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
-        toggleMenu(); // Close the menu
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+            maincontent.style.display="block";
+            barcodescanner.style.display ="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+            toggleMenu(); // Close the menu
+        }
+
+        else{
+            maincontent.style.display="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+            toggleMenu(); // Close the menu
+        }
     });
 
     imprintout.addEventListener("click", function(){
@@ -127,6 +140,8 @@ window.addEventListener("load", function(){
     var privacyout = document.getElementById("privacyout");
 
     privacytrigger.addEventListener("click", function(){
+        maincontent.style.display="block";
+        barcodescanner.style.display ="block";
         privacywindow.classList.toggle("open");
         pagetitle.innerHTML = "Datenschutz";
         pagehint.innerHTML = "Erklärung und Einstellungen";
@@ -134,9 +149,19 @@ window.addEventListener("load", function(){
     });
 
     privacyout.addEventListener("click", function(){
-        privacywindow.classList.toggle("open");
-        pagetitle.innerHTML = hometitle;
-        pagehint.innerHTML = homehint;
+        
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+            privacywindow.classList.toggle("open");
+            pagetitle.innerHTML = hometitle;
+            pagehint.innerHTML = homehint;
+        }
+
+        else{
+            privacywindow.classList.toggle("open");
+            pagetitle.innerHTML = hometitle;
+            pagehint.innerHTML = homehint;
+        }
     });
 
     /* OPEN  QUIZ */
@@ -146,17 +171,30 @@ window.addEventListener("load", function(){
 
     for (var i = 0; i < quiztrigger.length; i++) {
         quiztrigger[i].addEventListener("click", function(){
+            maincontent.style.display="block";
+            barcodescanner.style.display ="block";
             quizwindow.classList.toggle("open");
             pagetitle.innerHTML = "Gewinnspiel";
             pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
 
-            if(nav.classList.contains("nav-active")){
-                toggleMenu();
+            if(actswindow.style.display = "block"){
+                actswindow.style.display = "none"
+
+                if(nav.classList.contains("nav-active")){
+                    toggleMenu();
+                }
+    
+                else{
+                    //
+                }
+
             }
 
             else{
-                //
+
             }
+
+
     })};
 
     quizout.addEventListener("click", function(){

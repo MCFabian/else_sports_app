@@ -35,7 +35,7 @@ input, label, textarea, select {
   
 
 ::placeholder {
-	color: var(--divider);
+	color: var(#bcbcbc);
 }
 
   /* ----------  Label ---------  */
@@ -109,3 +109,116 @@ input, label, textarea, select {
   select:hover, select:active {
 	border-color: var(--blue);   /*Wir durch User-Color überschrieben*/
   }
+
+  .long-label {
+	border-radius: 4px;
+	background: #fff;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	width: 65%;
+	margin: 10px auto;
+	position: relative;
+	border: 1px solid var(#bcbcbc);
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.square-label {
+	border-radius: 4px;
+	background: #fff;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 170px;
+	height: auto;
+	margin: 10px auto;
+	position: relative;
+	border: 1px solid var(#bcbcbc);
+	transition: 0.3s;
+	cursor: pointer;
+	text-align: center;	
+}
+
+.square-label div {
+	margin: auto;
+}
+
+.long-label:hover {
+	background: #2772fc11;
+}
+
+.active-radio {
+	background: #2772fc11;
+	border: 1px solid var(--blue);
+	border-left: 4px solid var(--blue);
+}
+
+.long-label strong{
+	color: var(--blue);
+	font-weight: 700;
+	margin: auto 10px auto 0;
+	padding-right: 10px;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	border-right: 1px solid var(#bcbcbc);
+}
+
+.long-label div {
+	color: var(--grey);
+	font-weight: 400;
+	font-size: 1.1rem;
+	margin: auto auto auto 10px;
+}
+
+.label-false {
+	background: #ff44512d;
+	border: 1px solid var(--red);
+	color: var(--red);
+}
+
+.label-true {
+	background: #2ea44f1a;
+	border: 1px solid var(--green);
+	color: var(--green);
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+}
+
+.flex .long-label {
+	width: 45%;
+	margin: auto;
+}
+
+  /* The dots/bullets/indicators */
+
+  #dot-container {
+	margin-top: 40px;
+	bottom: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 2px;
+  background-color: var(--grey);
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.dot:hover {
+	transform: scale(1.6);
+}
+
+.active, .dot:hover {
+  background-color: var(--lightgrey);
+}
