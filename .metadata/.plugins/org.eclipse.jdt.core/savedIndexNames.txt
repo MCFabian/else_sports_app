@@ -1,7 +1,3 @@
 INDEX VERSION 1.127+C:\Users\Fabian\Desktop\App\Workspace_WIN_QR_Plugin\.metadata\.plugins\org.eclipse.jdt.core
 2402366007.index
-1292118649.index
-4057019336.index
-4201754997.index
-1136157360.index
-465576291.index
+3232340405.index
