@@ -33,6 +33,7 @@ window.addEventListener("load", function(){
     var notificationcounter = document.getElementById("notificationcounter");
     var notificationoverlay = document.getElementById("notification_overlay");
     var notificationsclose = document.getElementById("notifications-close");
+
     
     notification.addEventListener("click", function(){  //CHANGE To TOUCHSTART
         callnotifications();
@@ -94,11 +95,12 @@ function tablefilter() {
 
 
 window.addEventListener("load", function(){
-    const maincontent = document.getElementById("home").innerHTML;
+    const maincontent = document.getElementById("home");
     var pagetitle = document.getElementById("pagetitle");
     var pagehint = document.getElementById("pagehint");
     var hometitle = "Willkommen";
     var homehint = "Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
+    var barcodescanner = document.getElementById("scann-bar");
 
     /* OPEN  IMPRINT */
     var imprinttrigger = document.getElementById("imprint");
@@ -167,27 +169,25 @@ window.addEventListener("load", function(){
     var actstrigger = document.querySelectorAll(".acts");
     var actswindow = document.getElementById("actswindow");
     var actsout = document.getElementById("actsout");
-    var actlist = "						<div class='filter'>							<input onkeyup='tablefilter()' id='search' placeholder='Nach Auftritten suchen' type='text' name='' id=''>							<button class='icon'>swap_vert</button>						</div>								<a id='programm' class='card' href='#'>							<div class='card-img-holder'>								<img src='img/example.png' alt='$'>							</div>							<div class='homecards-text'>								<div class='homecards-icon' id='programm-icon'></div>								<div >									<small>Aktuell läuft:</small>									<h2>Begrüßungsrede der Schulleitungen</h2>								</div>							</div>							<span></span>						</a>						<hr>						<ul id='acts'>							<li>								<a id='programm' class='card' href='#'>									<div class='homecards-text'>										<div class='homecards-icon' id='programm-icon'></div>										<div >											<small>Aktuell läuft:</small>											<h2 class='searchfortext'>Begrüßungsrede der Schulleitungen</h2>										</div>									</div>									<span></span>								</a>							</li>						</ul>						<a class='classic-btn' href='#' id='actsout'>Home</a>";
 
     for (var i = 0; i < actstrigger.length; i++) {
         actstrigger[i].addEventListener("click", function(){
-            document.getElementById("home").innerHTML = "";
-            document.getElementById("home").innerHTML = actlist;
-            /* actswindow.classList.toggle("open");*/
-            pagetitle.innerHTML = "Programm";
-            pagehint.innerHTML = "Erfahre alles über die geplanten Acts."; 
+            barcodescanner.style.display ="none";
+            actswindow.style.display="block";
+            maincontent.style.display="none";
             
             if(document.getElementById("nav").classList.contains("nav-active")){
                 toggleMenu();
             }
-
     })};
 
-        actsout.addEventListener("click", function(){
-            alert(maincontent)
-            alert("Hello")
-            document.getElementById("home").innerHTML = maincontent;
+    actsout.addEventListener("click", function(){
+        barcodescanner.style.display ="block";
+        maincontent.style.display="block";
+        actswindow.style.display="none";
     }); 
+
+
 
 
 

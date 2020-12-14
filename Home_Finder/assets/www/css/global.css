@@ -21,9 +21,13 @@ main {
 	overflow: hidden;
 }
 
-main#home {
+main#home, main#actswindow {
 	overflow: hidden;
 	padding-bottom: 100px;
+}
+
+#actswindow {
+	display: none;
 }
 
 .solid_overlay {
