@@ -11,6 +11,11 @@ a {
 
 /* ----------------------------------------------------------------------------------------------------------- BurgerStyles */
 
+
+.bb-btn.inactive {
+  opacity: 0.2 !important;
+}
+
 .hamburger {
   height: 20px;
   z-index: 5;
@@ -134,6 +139,7 @@ a {
   vertical-align: bottom;
   color: var(--grey);
   position: relative;
+  cursor: pointer;
 }
 
 #notificationcounter {

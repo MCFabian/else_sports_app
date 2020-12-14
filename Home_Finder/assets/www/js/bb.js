@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
 
 window.addEventListener("load", function(){
     //OPEN NOTIFICATIONS
-
+    var burgerbutton = document.getElementById("bb-btn");
     var notification = document.getElementById("notifications");
     var notificationcounter = document.getElementById("notificationcounter");
     var notificationoverlay = document.getElementById("notification_overlay");
@@ -43,9 +43,12 @@ window.addEventListener("load", function(){
     })
 
     function callnotifications(){
+        burgerbutton.classList.toggle("inactive");
+
         //CHECK AND CLOSE MENU IF OPEN
         if(document.getElementById("nav").classList.contains("nav-active")){
             toggleMenu();
+
         }
 
         else {}
@@ -92,7 +95,6 @@ function tablefilter() {
 
 window.addEventListener("load", function(){
     const maincontent = document.getElementById("home").innerHTML;
-    alert(maincontent)
     var pagetitle = document.getElementById("pagetitle");
     var pagehint = document.getElementById("pagehint");
     var hometitle = "Willkommen";
@@ -142,8 +144,8 @@ window.addEventListener("load", function(){
 
     quiztrigger.addEventListener("click", function(){
         quizwindow.classList.toggle("open");
-        pagetitle.innerHTML = "Datenschutz";
-        pagehint.innerHTML = "Erklärung und Einstellungen";
+        pagetitle.innerHTML = "Gewinnspiel";
+        pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
         toggleMenu(); // Close the menu
     });
 
@@ -177,9 +179,6 @@ window.addEventListener("load", function(){
             alert(maincontent)
             alert("Hello")
             document.getElementById("home").innerHTML = maincontent;
-/*             actswindow.classList.toggle("open");
-            pagetitle.innerHTML = hometitle;
-            pagehint.innerHTML = homehint; */
     }); 
 
 
