@@ -162,116 +162,80 @@
 				<!-- QUIZ 1 -->
 				<div id="quizwindow" class="solid_overlay">
                     <div class="solid_overlay_inner">
-						<div class="slideshow-container">
-							<div class="mySlides fade center">
-								<h3>Hey, sag mal, wie ist dein Name?</h3>
-								<p>Ich würde dich gern persönlich kennenlernen. Um dir ein paar Fragen zu stellen, kannst du mir gern deinen Namen verraten. Das ist aber kein Muss, nur etwas unpersönlicher. </p>
-								<label for="name">Dein Name (optional)</label>
-								<input placeholder="Max" class="input-lg btn-center" id="name" type="text">
-							</div>
-							
-							<div class="mySlides fade">
-								<div id="start-img"></div>
-								<h3 id="welcome"></h3>
-								<p>Nachfolgend werden <strong>dir fünf Fragen gestellt.</strong> Du kannst vor dem Beantworten jederzeit nachlesen. <br> Viel Spaß mit dem Quiz.</p>
-							</div>
+						<div class="slideshow-container">					
 							<!-- Frage 1 -->
 							<div class="mySlides fade">
-								<p>Welcher dieser Begriffe beschreibt ebenalls das Format <strong>Scripted Reality?</strong></p>
+								<div class="questionnumber"><span>1.</span></div>
+								<h2 class="question">Wie viele Blätter hat ein vierblättriges Kleeblatt?</h2>
 								<label id="qu-one-la-one" class="long-label" for="qu-one-ans-one">
-									<strong>1.</strong>
 									<div>Dokumentationen</div>
 									<input type="radio" name="one" id="qu-one-ans-one">
 								</label>
-		
 								<label id="qu-one-la-two" class="long-label" for="qu-one-ans-two">
-									<strong>2.</strong>
 									<div>Spielfilme</div>
 									<input type="radio" name="one" id="qu-one-ans-two">
 								</label>
 		
 								<label id="qu-one-la-three" class="long-label" for="qu-one-ans-three">
-									<strong>3.</strong>
 									<div>Doku-Soap oder Reality-Soap</div>
 									<input type="radio" name="one" id="qu-one-ans-three">
 								</label>
-		
+								<label id="qu-one-la-four" class="long-label" for="qu-one-ans-four">
+									<div> Ergebnisse.</div>
+									<input type="radio" name="one" id="qu-one-ans-four">
+								</label>
+								<hr>
+								<div class="classic-btn" id="quizout">Zurück zu Home</div>
 							  </div>
+
 							  <!-- Frage 2 -->
 							  <div class="mySlides fade">
-								<p>Was sind typische Merkmale für die dramaturgische Handlung einer Doku-Soap?</p>
+								<div class="questionnumber"><span>2.</span></div>
+								<h2 class="question">Wie viele Blätter hat ein vierblättriges Kleeblatt?</h2>
 								<label id="qu-two-la-one" class="long-label" for="qu-two-ans-one">
-									<strong>1.</strong>
-									<div>Die realitätstreue Darstellung wahrer Ergebnisse.</div>
+									<div> Menge Emotionen.</div>
 									<input type="radio" name="two" id="qu-two-ans-one">
 								</label>
 								<label id="qu-two-la-two" class="long-label" for="qu-two-ans-two">
-									<strong>2.</strong>
-									<div>Überspitze reale Ergebnisse, präsentiert mit einer Menge Emotionen.</div>
+									<div> Menge Emotionen.</div>
 									<input type="radio" name="two" id="qu-two-ans-two">
 								</label>
+								<label id="qu-two-la-three" class="long-label" for="qu-two-ans-three">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="two" id="qu-two-ans-three">
+								</label>
+								<label id="qu-two-la-four" class="long-label" for="qu-two-ans-four">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="two" id="qu-two-ans-four">
+								</label>
+								<hr>
+								<!-- <div class="classic-btn" id="quizout">Zurück zu Home</div> -->
 							  </div>
-								<!-- Frage 3 -->
-								<div class="mySlides fade">
-									<p>Nachfolgend kannst du dir eine Seqzuenz ansehen. <strong>Entscheide selbstständig</strong>, ob diese aus einem Scripted Reality Format entsprang.</p>
-									<div class="video-container">
-										<video controls src="src/img/wiso-clip.mp4"></video>
-									</div>
-									<div class="flex">
-										<label id="qu-three-la-one" class="long-label" for="qu-three-ans-one">
-											<strong>1.</strong>
-											<div>Scripted-Reality-Formt</div>
-											<input type="radio" name="three" id="qu-three-ans-one">
-										</label>
-										<label id="qu-three-la-two" class="long-label" for="qu-three-ans-two">
-											<strong>2.</strong>
-											<div>Kein Scripted-Reality-Formt</div>
-											<input type="radio" name="three" id="qu-three-ans-two">
-										</label>
-									</div>
-								</div>
-								<!-- Frage 4 -->
-								<div class="mySlides fade">
-									<p>Scripted-Reality-Formate können gerade von jungen Zuschauergruppen nicht von einer dokumentarischen Berichterstattung unterschieden werden und somit als real empfunden werden. <br><strong>Ab welchem Alter ist man in der Lage, Wirklichkeit und Scripted-Reality zu unterscheiden?</strong></p>
-									<div class="flex">
-										<label id="qu-four-la-one" class="square-label" for="qu-four-ans-one">
-											<div id="kids1-img"></div>
-											<div>5-7 Jahre</div>
-											<input type="radio" name="four" id="qu-four-ans-one">
-										</label>
-										<label id="qu-four-la-two" class="square-label" for="qu-four-ans-two">
-											<div id="kids2-img"></div>
-											<div>7-9 Jahre</div>
-											<input type="radio" name="four" id="qu-four-ans-two">
-										</label>
-										<label id="qu-four-la-three" class="square-label" for="qu-four-ans-three">
-											<div id="kids3-img"></div>
-											<div>12-17 Jahre</div>
-											<input type="radio" name="four" id="qu-four-ans-three">
-										</label>
-									</div>
-								</div>
-								<!-- Frage 5 -->
-								<div class="mySlides fade"><p>Kinder und Jugendliche sind eine großze Ziel- und Altersgruppe von Reality-Soaps. <br> Welche der aufgeführten Zielgruppen/Personen soll direkt mit dem Format Scripted-Reality angesprochen werden?</p>
-									
-										<label id="qu-five-la-one" class="long-label" for="qu-five-ans-one">
-											<strong>1.</strong>
-											<div>Arbeitslose und Hausfrauen</div>
-											<input type="radio" name="five" id="qu-five-ans-one">
-										</label>
-										<label id="qu-five-la-two" class="long-label" for="qu-five-ans-two">
-											<strong>2.</strong>
-											<div>Berufstätige und Pendler</div>
-											<input type="radio" name="five" id="qu-five-ans-two">
-										</label>
-								</div>
-								<!-- Auswertung -->
-								<div class="mySlides fade">
-									<div id="end-img"></div>
-									<p id="hide">Na, bist du schon gespannt, wie viele Fragen du richtig beantwortet hast?</p>
-									<h3 id="score"></h3>
-									<button id="end" onclick="getscore()" class="agree-btn"><i class="icon">poll</i>Ergebnis berechnen</button>
-								</div>
+
+							  <!-- Frage 2 -->
+							  <div class="mySlides fade">
+								<div class="questionnumber"><span>3.</span></div>
+								<h2 class="question">Wie viele Blätter hat ein vierblättriges Kleeblatt?</h2>
+								<label id="qu-three-la-one" class="long-label" for="qu-three-ans-one">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="three" id="qu-three-ans-one">
+								</label>
+								<label id="qu-three-la-two" class="long-label" for="qu-three-ans-two">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="three" id="qu-three-ans-two">
+								</label>
+								<label id="qu-three-la-three" class="long-label" for="qu-three-ans-three">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="three" id="qu-three-ans-three">
+								</label>
+								<label id="qu-three-la-four" class="long-label" for="qu-three-ans-four">
+									<div> Menge Emotionen.</div>
+									<input type="radio" name="three" id="qu-three-ans-four">
+								</label>
+								<hr>
+								<!-- <div class="classic-btn" id="quizout">Zurück zu Home</div> -->
+							  </div>
+
 						</div>
 						<div id="dot-container" style="text-align:center">
 							<span class="dot" onclick="currentSlide(1)"></span> 
@@ -463,7 +427,7 @@
 							</div>
 							<span id="progress-indicator"><div id="percent"></div></span>
 						</a>
-						<a class="card-subtitle" href="#"> <strong>5/10 Fragen gelöst.</strong></a>
+						<a class="card-subtitle" href="#"> <strong><div id="livescore">0</div>/10 Fragen gelöst.</strong></a>
 					</li>
 					<li>
 						<a id="media" class="card" href="#">

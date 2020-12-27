@@ -4,117 +4,141 @@
 
 window.addEventListener("load", function(){
 
+	var questionnumber = document.getElementsByClassName("questionnumber");
+
+	/* 	FRAGE 1 */
 	var radioone = document.getElementById("qu-one-la-one");
 	var radiotwo = document.getElementById("qu-one-la-two");
 	var radiothree = document.getElementById("qu-one-la-three");
-
-	var radiofour = document.getElementById("qu-two-la-one");
-	var radiofive = document.getElementById("qu-two-la-two");
-
-	var radiosix = document.getElementById("qu-three-la-one");
-	var radioseven = document.getElementById("qu-three-la-two");
-
-	var radioeight = document.getElementById("qu-four-la-one");
-	var radionine = document.getElementById("qu-four-la-two");
-	var radioten = document.getElementById("qu-four-la-three");
-
-	var radioeleven = document.getElementById("qu-five-la-one");
-	var radiotwelve = document.getElementById("qu-five-la-two");
+	var radiofour = document.getElementById("qu-one-la-four");
 	
-	//Frage 1
+	/* 	FRAGE 2 */
+	var radiofive = document.getElementById("qu-two-la-one");
+	var radiosix = document.getElementById("qu-two-la-two");
+	var radioseven = document.getElementById("qu-two-la-three");
+	var radioeight = document.getElementById("qu-two-la-four");
+	
+	var radionine = document.getElementById("qu-three-la-one");
+	var radioten = document.getElementById("qu-three-la-two");
+	var radioeleven = document.getElementById("qu-three-la-three");
+	var radiotwelve = document.getElementById("qu-three-la-four");
+	
+
+
+	//Frage 1 - Antwort 1 richtig
 
 	radioone.addEventListener("click", function(){
-		radioone.classList.add("active-radio");
-		radiotwo.classList.remove("active-radio");
-		radiothree.classList.remove("active-radio");
+		radioone.classList.add("label-true");
+		questionnumber[0].classList.add("question-true");
+		questionnumber[0].classList.remove("question-false");
+		radiotwo.classList.add("label-inactive");
+		radiothree.classList.add("label-inactive");
+		radiofour.classList.add("label-inactive");
 	});
 
 	radiotwo.addEventListener("click", function(){
-		radioone.classList.remove("active-radio");
-		radiotwo.classList.add("active-radio");
-		radiothree.classList.remove("active-radio");
+		radioone.classList.add("label-inactive");
+		radiotwo.classList.add("label-false");
+		questionnumber[0].classList.add("question-false");
+		questionnumber[0].classList.remove("question-true");
+		radiothree.classList.add("label-inactive");
+		radiofour.classList.add("label-inactive");
 	});
 
 	radiothree.addEventListener("click", function(){
-		radioone.classList.remove("active-radio");
-		radiotwo.classList.remove("active-radio");
-		radiothree.classList.add("active-radio");
+		radioone.classList.add("label-inactive");
+		radiotwo.classList.add("label-inactive");
+		radiothree.classList.add("label-false");
+		questionnumber[0].classList.add("question-false");
+		questionnumber[0].classList.remove("question-true");
+		radiofour.classList.add("label-inactive");
 	});
-
-	//Frage 2
 
 	radiofour.addEventListener("click", function(){
-		radiofour.classList.add("active-radio");
-		radiofive.classList.remove("active-radio");
+		radioone.classList.add("label-inactive");
+		radiotwo.classList.add("label-inactive");
+		radiothree.classList.add("label-inactive");
+		radiofour.classList.add("label-false");
+		questionnumber[0].classList.add("question-false");
+		questionnumber[0].classList.remove("question-true");
 	});
 
+	//Frage 2 - Antwort 3 richtig
 	radiofive.addEventListener("click", function(){
-		radiofour.classList.remove("active-radio");
-		radiofive.classList.add("active-radio");
+		radiofive.classList.add("label-false");
+		questionnumber[1].classList.add("question-false");
+		questionnumber[1].classList.remove("question-true");
+		radiosix.classList.add("label-inactive");
+		radioseven.classList.add("label-inactive");
+		radioeight.classList.add("label-inactive");
 	});
-
-	//Frage 3
 
 	radiosix.addEventListener("click", function(){
-		radiosix.classList.add("active-radio");
-		radioseven.classList.remove("active-radio");
+		radiofive.classList.add("label-inactive");
+		radiosix.classList.add("label-false");
+		questionnumber[1].classList.add("question-false");
+		questionnumber[1].classList.remove("question-true");
+		radioseven.classList.add("label-inactive");
+		radioeight.classList.add("label-inactive");
 	});
 
 	radioseven.addEventListener("click", function(){
-		radiosix.classList.remove("active-radio");
-		radioseven.classList.add("active-radio");
+		radiofive.classList.add("label-inactive");
+		radiosix.classList.add("label-inactive");
+		radioseven.classList.add("label-true");
+		questionnumber[1].classList.add("question-true");
+		questionnumber[1].classList.remove("question-false");
+		radioeight.classList.add("label-inactive");
 	});
-
-	//Frage 4
 
 	radioeight.addEventListener("click", function(){
-		radioeight.classList.add("active-radio");
-		radionine.classList.remove("active-radio");
-		radioten.classList.remove("active-radio");
+		radiofive.classList.add("label-inactive");
+		radiosix.classList.add("label-inactive");
+		radioseven.classList.add("label-inactive");
+		radioeight.classList.add("label-false");
+		questionnumber[1].classList.add("question-false");
+		questionnumber[1].classList.remove("question-true");
 	});
 
+	//Frage 3 - Antwort 1 richtig
 	radionine.addEventListener("click", function(){
-		radioeight.classList.remove("active-radio");
-		radionine.classList.add("active-radio");
-		radioten.classList.remove("active-radio");
-	});
+		radionine.classList.add("label-true");
+		questionnumber[2].classList.add("question-true");
+		questionnumber[2].classList.remove("question-false");
+		radioten.classList.add("label-inactive");
+		radioeleven.classList.add("label-inactive");
+		radiotwelve.classList.add("label-inactive");
+	})
 
 	radioten.addEventListener("click", function(){
-		radioeight.classList.remove("active-radio");
-		radionine.classList.remove("active-radio");
-		radioten.classList.add("active-radio");
-	});
-
-	// Frage 5
+		radionine.classList.add("label-inactive");
+		radioten.classList.add("label-false");
+		questionnumber[2].classList.add("question-false");
+		questionnumber[2].classList.remove("question-true");
+		radioeleven.classList.add("label-inactive");
+		radiotwelve.classList.add("label-inactive");
+	})
 
 	radioeleven.addEventListener("click", function(){
-		radioeleven.classList.add("active-radio");
-		radiotwelve.classList.remove("active-radio");
-	});
+		radionine.classList.add("label-inactive");
+		radioten.classList.add("label-inactive");
+		radioeleven.classList.add("label-false");
+		questionnumber[2].classList.add("question-false");
+		questionnumber[2].classList.remove("question-true");
+		radiotwelve.classList.add("label-inactive");
+	})
 
 	radiotwelve.addEventListener("click", function(){
-		radioeleven.classList.remove("active-radio");
-		radiotwelve.classList.add("active-radio");
-	});
+		radionine.classList.add("label-inactive");
+		radioten.classList.add("label-inactive");
+		radioeleven.classList.add("label-inactive");
+		radiotwelve.classList.add("label-false");
+		questionnumber[2].classList.add("question-false");
+		questionnumber[2].classList.remove("question-true");
+	})
+
 });
 
-
-
-
-
-// JavaScript Document
-/* document.getElementById("next").addEventListener("click", function(){
-	var name = document.getElementById("name").value;
-
-	if(name == "") {
-		document.getElementById("welcome").innerHTML = "Lass uns loslegen!";
-	}
-
-	else {
-		document.getElementById("welcome").innerHTML = name +", lass uns loslegen!";
-	}
-
-});  */
 
 
 
@@ -125,13 +149,10 @@ var score;
 // FRAGE 1
 function getone() {
 	var one = document.getElementById("qu-one-ans-one");
-	var two = document.getElementById("qu-one-ans-two");
-	var three = document.getElementById("qu-one-ans-three");
 	var stepone;
 
-	if(three.checked){
+	if(one.checked){
 		stepone = 1;
-		
 	}
 
 	else {
@@ -141,12 +162,12 @@ function getone() {
 	return stepone;
 }
 
+// FRAGE 2
 function gettwo(){
-	var one = document.getElementById("qu-two-ans-one");
-	var two = document.getElementById("qu-two-ans-two");
+	var three = document.getElementById("qu-two-ans-three");
 	var steptwo;
 
-	if(two.checked){
+	if(three.checked){
 		steptwo = 1;
 	}
 
@@ -157,9 +178,9 @@ function gettwo(){
 	return steptwo;
 }
 
+// FRAGE 3
 function getthree(){
 	var one = document.getElementById("qu-three-ans-one");
-	var two = document.getElementById("qu-three-ans-two");
 	var stepthree;
 
 	if(one.checked){
@@ -173,62 +194,61 @@ function getthree(){
 	return stepthree;
 }
 
-function getfour(){
-	var one = document.getElementById("qu-four-ans-one");
-	var two = document.getElementById("qu-four-ans-two");
-	var three = document.getElementById("qu-four-ans-three");
-	var stepfour;
 
-	if(three.checked){
-		stepfour = 1;
-	}
-
-	else {
-		stepfour = 0;
-	}
-
-	return stepfour;
-}
-
-function getfive(){
-	var one = document.getElementById("qu-five-ans-one");
-	var two = document.getElementById("qu-five-ans-two");
-	var stepfive;
-
-	if(one.checked){
-		stepfive = 1;
-	}
-
-	else {
-		stepfive = 0;
-	}
-
-	return stepfive;
-}
 
 function getscore(){
-	score = getone() +gettwo() +getthree() +getfour() +getfive();
+	//SEND NOTIFICATION
 
-	var nameend = document.getElementById("name").value;
-	document.getElementById("hide").innerHTML ="Du kannst dein Ergebnis jeder Zeit neu berechnen."
+	var notificationlist = document.getElementById("notificationlist");
+	var currentnotificationlist = document.getElementById("notificationlist").innerHTML;
+	var notificationthree = " <li id='notificationquizthree' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Drei Richtige!</h2> <small>Du hast schon 3 Fragen richtig beantwortet.</small> </div> </li>";
+
+
+	var livescore = document.getElementById("livescore");
+	var percent = document.getElementById("percent");
+	score = getone() +gettwo() +getthree();
+	livescore.innerHTML = score;
+	alert("Frage 1:" +getone());
+	alert("Frage 2:" +gettwo());
+	alert("Frage 3:" +getthree());
+	alert("Gesamte:" +score);
+
+	if(score == 0){
+		percent.style.width = "0%"
+	}
+
+	if(score == 1){
+		percent.style.width = "10%"
+	}
+
+	if(score == 2){
+		percent.style.width = "20%"
+	}
+
+	if(score == 3){
+		percent.style.width = "30%"
+
+		notificationlist.innerHTML = notificationthree +currentnotificationlist;
+
+	}
+
+	var notificationquantity = document.getElementById("notificationlist").childElementCount;
+	notificationcounter.innerHTML = (notificationquantity);
+	//CHANGE NOTIFICATIONS ICON IF MORE THEN 1
+	if (notificationquantity == 0) {
+		notification.innerHTML = ("notifications_none");    
+	} 
 	
-		if(nameend == "") {
-			document.getElementById("score").innerHTML = "Du hast " +score +"/5 Fragen richtig beantwortet!";
+	else {
+		//
+	}
 
-			if(score == 0){
-				document.getElementById("score").innerHTML = "Du hast leider keine der Fragen richtig beantwortet.";	
-			}
-		}
-	
-		else {
-			document.getElementById("score").innerHTML = nameend +", du hast " +score +"/5 Fragen richtig beantwortet!";
-
-			if(score == 0){
-				document.getElementById("score").innerHTML = nameend +", du hast leider keine der Fragen richtig beantwortet.";	
-			}
-
-		} 
 }
+
+
+
+
+
 
 /* OLD SLIDER */
 // Slider

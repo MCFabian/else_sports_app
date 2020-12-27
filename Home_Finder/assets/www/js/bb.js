@@ -49,7 +49,6 @@ window.addEventListener("load", function(){
         //CHECK AND CLOSE MENU IF OPEN
         if(document.getElementById("nav").classList.contains("nav-active")){
             toggleMenu();
-
         }
 
         else {}
@@ -60,6 +59,7 @@ window.addEventListener("load", function(){
     //CHECK QUANTITY OF NOTIFICATIONS
     var notificationquantity = document.getElementById("notificationlist").childElementCount;
     notificationcounter.innerHTML = (notificationquantity);
+
 
     //CHANGE NOTIFICATIONS ICON IF MORE THEN 1
     if (notificationquantity == 0) {
@@ -201,6 +201,8 @@ window.addEventListener("load", function(){
         quizwindow.classList.toggle("open");
         pagetitle.innerHTML = hometitle;
         pagehint.innerHTML = homehint;
+
+        getscore();
     });
 
     /* OPEN  ACTS */
