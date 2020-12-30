@@ -27,6 +27,9 @@ window.addEventListener("load", function(){
 
 
 window.addEventListener("load", function(){
+
+
+
     //OPEN NOTIFICATIONS
     var burgerbutton = document.getElementById("bb-btn");
     var notification = document.getElementById("notifications");
@@ -227,7 +230,22 @@ window.addEventListener("load", function(){
         barcodescanner.style.display ="block";
         maincontent.style.display="block";
         actswindow.style.display="none";
-    }); 
+    });
+
+
+    //ENTRYPAGE
+    var entry = document.getElementById("entrypage");
+    var leaveentry = document.getElementById("leaveentry");
+
+    function leaveentry(){
+       alert("hello")
+    }
+
+/*     leaveentry.addEventListener("click", function(){
+        leaveentry();
+
+    }) */
+    
 
 });
 

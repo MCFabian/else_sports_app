@@ -1,3 +1,20 @@
+/* ENTRYPAGE */
+#entrypage {
+	background-color: #F3F4F8;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	z-index: 99;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+}
+
+#entrypage #wave {
+	margin-top: 60px;
+}
+
 #scann-bar {
 	background: var(--blue);
 	position: fixed;
@@ -127,10 +144,15 @@
 	vertical-align: middle;
 }
 
-#logo-row {
+.logo-row {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.logo-row > a {
+	margin: auto 15px;
+	padding: 15px 0;
 }
 
 #else, #fischer {
@@ -142,11 +164,22 @@
 	background-position: center;
 }
 
-#else {
+#else_big, #fischer_big {
+	margin: 15px 7.5px;
+	height: 40px;
+	width: 89px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#else,
+#else_big {
 	background-image: url("../img/menu_else.png");
 }
 
-#fischer {
+#fischer,
+#fischer_big  {
 	background-image: url("../img/menu_fischer.png");
 }
 
@@ -309,7 +342,6 @@
 #percent {
 	background: var(--lightgrey);
 	height: 5px;
-/* 	width: 50%; */
 	position: absolute;
 	left: 0;
 	top: 0;
