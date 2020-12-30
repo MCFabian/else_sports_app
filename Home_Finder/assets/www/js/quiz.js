@@ -213,6 +213,8 @@ function getscore(){
 	alert("Frage 3:" +getthree());
 	alert("Gesamte:" +score);
 
+
+	//SET PERCENT-WIDTH OF CARD
 	if(score == 0){
 		percent.style.width = "0%"
 	}
@@ -227,7 +229,6 @@ function getscore(){
 
 	if(score == 3){
 		percent.style.width = "30%"
-
 		notificationlist.innerHTML = notificationthree +currentnotificationlist;
 
 	}

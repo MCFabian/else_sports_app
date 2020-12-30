@@ -51,7 +51,9 @@ window.addEventListener("load", function(){
             toggleMenu();
         }
 
-        else {}
+        else {
+            //
+        }
         document.getElementById("overlay").classList.toggle("overlay-active");
         notificationoverlay.classList.toggle("slide_overlay-active");
     }
@@ -70,8 +72,6 @@ window.addEventListener("load", function(){
         //
     }
 })
-
-
 
 // FILTER ACT-LIST BY SEARCH
 function tablefilter() {
@@ -176,6 +176,7 @@ window.addEventListener("load", function(){
             quizwindow.classList.toggle("open");
             pagetitle.innerHTML = "Gewinnspiel";
             pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
+            document.getElementById("overlay").classList.toggle("overlay-active");
 
             if(actswindow.style.display = "block"){
                 actswindow.style.display = "none"
@@ -191,13 +192,14 @@ window.addEventListener("load", function(){
             }
 
             else{
-
+                //
             }
 
 
     })};
 
     quizout.addEventListener("click", function(){
+        document.getElementById("overlay").classList.remove("overlay-active");
         quizwindow.classList.toggle("open");
         pagetitle.innerHTML = hometitle;
         pagehint.innerHTML = homehint;
@@ -226,10 +228,6 @@ window.addEventListener("load", function(){
         maincontent.style.display="block";
         actswindow.style.display="none";
     }); 
-
-
-
-
 
 });
 
