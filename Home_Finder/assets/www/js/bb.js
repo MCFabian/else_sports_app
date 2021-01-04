@@ -268,12 +268,18 @@ window.addEventListener("load", function(){
     //ENTRYPAGE
     var entry = document.getElementById("entrypage");
     var leaveentry = document.getElementById("leaveentry")
+    var openentry = document.getElementById("entrynotifitication");
 
+    openentry.addEventListener("click", function(){
+/*         entry.style.opacity ="1";
+        entry.style.pointerEvents = "all"; */
+        entry.style.display = "block";
+     })
 
     leaveentry.addEventListener("click", function(){
-       entry.style.opacity ="0";
-       entry.style.pointerEvents = "none";
+/*        entry.style.opacity ="0"; */
        entry.style.display = "none";
+       
     })
 
 });

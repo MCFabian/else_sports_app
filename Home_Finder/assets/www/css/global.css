@@ -142,7 +142,8 @@ p.hint {
     margin: 15px 0;
 }
 
-.classic-btn {
+.classic-btn,
+.classic-btn-bordered {
     background: #F3F4F8;
     color: var(--lightgrey);
     font-weight: 600;
@@ -155,12 +156,16 @@ p.hint {
     width: 100%;
 }
 
+.classic-btn-bordered {
+/* 	border: 1px solid #ececec; */
+	background-color: #fff;
+	box-shadow: 0px 5px 10px 0px rgba(165, 165, 165, 0.2);
+}
+
 .red-btn {
 	background: var(--red);
 	color: #fff;
 }
-
-
 
 .bigmoji {
 	background-size: 80%;
