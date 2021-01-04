@@ -1,10 +1,15 @@
 #notificationquizthree>.notifications-icon,
-#notificationquizfive>.notifications-icon {
+#notificationquizfive>.notifications-icon,
+#notificationquizten>.notifications-icon {
 	background: #e4cbf8;
 	background-image: url("../img/emoji/rising.png");
 	background-size: 25px;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#notificationquizten >.notifications-icon  {
+	background-image: url("../img/emoji/win.png");
 }
 
 

@@ -60,6 +60,12 @@ window.addEventListener("load", function(){
 	var radiosthirtyfive = document.getElementById("qu-nine-la-three");
 	var radiosthirtysix= document.getElementById("qu-nine-la-four");
 
+	/* 	FRAGE 10 */
+	var radiosthirtyseven = document.getElementById("qu-ten-la-one");
+	var radiosthirtyeight = document.getElementById("qu-ten-la-two");
+	var radiosthirtynine = document.getElementById("qu-ten-la-three");
+	var radiosfourthy= document.getElementById("qu-ten-la-four");
+
 	//Frage 1 - Antwort 1 richtig
 
 	radioone.addEventListener("click", function(){
@@ -394,6 +400,43 @@ window.addEventListener("load", function(){
 		questionnumber[8].classList.remove("question-true");
 	})
 
+	//Frage 10 - Antwort 4 richtig
+	radiosthirtyseven.addEventListener("click", function(){
+		radiosthirtyseven.classList.add("label-false");
+		questionnumber[9].classList.add("question-false");
+		questionnumber[9].classList.remove("question-true");
+		radiosthirtyeight.classList.add("label-inactive");
+		radiosthirtynine.classList.add("label-inactive");
+		radiosfourthy.classList.add("label-inactive");
+	})
+
+	radiosthirtyeight.addEventListener("click", function(){
+		radiosthirtyseven.classList.add("label-inactive");
+		radiosthirtyeight.classList.add("label-false");
+		questionnumber[9].classList.add("question-false");
+		questionnumber[9].classList.remove("question-true");
+		radiosthirtynine.classList.add("label-inactive");
+		radiosfourthy.classList.add("label-inactive");
+	})
+
+	radiosthirtynine.addEventListener("click", function(){
+		radiosthirtyseven.classList.add("label-inactive");
+		radiosthirtyeight.classList.add("label-inactive");
+		radiosthirtynine.classList.add("label-false");
+		questionnumber[9].classList.add("question-false");
+		questionnumber[9].classList.remove("question-true");
+		radiosfourthy.classList.add("label-inactive");
+	})
+
+	radiosfourthy.addEventListener("click", function(){
+		radiosthirtyseven.classList.add("label-inactive");
+		radiosthirtyeight.classList.add("label-inactive");
+		radiosthirtynine.classList.add("label-inactive");
+		radiosfourthy.classList.add("label-true");
+		questionnumber[9].classList.add("question-true");
+		questionnumber[9].classList.remove("question-false");
+	})
+
 });
 
 
@@ -547,6 +590,22 @@ function getnine(){
 	return stepnine;
 }
 
+// FRAGE 10
+function getten(){
+	var four = document.getElementById("qu-ten-ans-four");
+	var stepten;
+
+	if(four.checked){
+		stepten = 1;
+	}
+
+	else {
+		stepten = 0;
+	}
+
+	return stepten;
+}
+
 
 
 function getscore(){
@@ -557,11 +616,12 @@ function getscore(){
 	var notificationthree = " <li id='notificationquizthree' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Drei Richtige!</h2> <small>Du hast schon 3 Fragen richtig beantwortet.</small> </div> </li>";
 	var notificationfive = " <li id='notificationquizfive' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Fünf Richtige!</h2> <small>Du hast schon 5 Fragen richtig beantwortet.</small> </div> </li>";
 	var notificationnine = " <li id='notificationquiznine' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Neun Richtige!</h2> <small>Dir fehlt noch eine richtige Antwort!</small> </div> </li>";
+	var notificationten = " <li id='notificationquizten' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Du hast gewonnen!</h2> <small>Du hast alle Fragen richtig beantwortet.</small> </div> </li>";
 
 
 	var livescore = document.getElementById("livescore");
 	var percent = document.getElementById("percent");
-	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight() +getnine();
+	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight() +getnine() +getten();
 	livescore.innerHTML = score;
 	alert("Frage 1:" +getone());
 	alert("Frage 2:" +gettwo());
@@ -572,6 +632,7 @@ function getscore(){
 	alert("Frage 7:" +getseven());
 	alert("Frage 8:" +geteight());
 	alert("Frage 9:" +getnine());
+	alert("Frage 10:" +getten());
 	alert("Gesamte:" +score);
 
 
@@ -621,7 +682,7 @@ function getscore(){
 
 	if(score == 10){
 		percent.style.width = "100%"
-		notificationlist.innerHTML = notificationfive +currentnotificationlist;
+		notificationlist.innerHTML = notificationten +currentnotificationlist;
 	}
 
 	var notificationquantity = document.getElementById("notificationlist").childElementCount;
