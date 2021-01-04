@@ -449,6 +449,22 @@
 #acts {
 	list-style: none;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+/* 	margin: 0; */
+/* 	border-top: 1px solid #DEDEF5 */
+}
+
+#acts.dec {
+	flex-direction: column-reverse;
+}
+
+#acts li {
+/* 	color: transparent; */
+}
+
+#acts li a {
+/* 	margin: 0; */
 }
 
 #acts li .card .homecards-text {

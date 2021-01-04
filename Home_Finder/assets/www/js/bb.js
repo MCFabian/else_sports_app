@@ -74,6 +74,15 @@ window.addEventListener("load", function(){
     else {
         //
     }
+
+    var sortbutton = document.getElementById("sortbutton");
+
+    /* SORT ACTLIST */
+    sortbutton.addEventListener("click", function(){
+        var list = document.getElementById("acts");
+        list.classList.toggle("dec");
+    })
+
 })
 
 // FILTER ACT-LIST BY SEARCH
@@ -93,8 +102,70 @@ function tablefilter() {
             
         }
     }
-
 }
+
+
+
+
+
+
+/* (function() {
+	
+	function sortElements( elements, callback ) {
+		var elems = [];
+		for( var i = 0; i < elements.length; ++i ) {
+			var el = elements[i];
+			elems.push( el );
+		}
+		var sorted = elems.sort( callback );
+		return sorted;	
+	}
+	
+	function sortAscending( a, b ) {
+		var aValue = parseInt( a.firstChild.nodeValue, 10 );
+		var bValue = parseInt( b.firstChild.nodeValue, 10 );
+		return aValue > bValue;	
+	}
+	
+	function sortDescending( a, b ) {
+		var aValue = parseInt( a.firstChild.nodeValue, 10 );
+		var bValue = parseInt( b.firstChild.nodeValue, 10 );
+		return aValue < bValue;	
+	}		
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var elements = document.querySelectorAll( "#acts li" ),
+			test = document.querySelector( "#acts" ),
+			asc = document.querySelector( "#asc" ),
+			desc = document.querySelector( "#desc" );
+		    
+		    
+		    asc.addEventListener( "click", function() {
+			    var sortedElements = sortElements( elements, sortAscending );
+			    var html = "";
+			    for( var i = 0; i < sortedElements.length; ++i ) {
+				    html += sortedElements[i].outerHTML;
+			    }
+			    test.innerHTML = html;
+			    
+		    }, false);
+		    
+		    desc.addEventListener( "click", function() {
+			    var sortedElements = sortElements( elements, sortDescending );
+			    var html = "";
+			    for( var i = 0; i < sortedElements.length; ++i ) {
+				    html += sortedElements[i].outerHTML;
+			    }
+			    test.innerHTML = html;
+			    
+		    }, false);
+		
+		
+		
+	});
+	
+})(); */
+
 
 
 window.addEventListener("load", function(){
