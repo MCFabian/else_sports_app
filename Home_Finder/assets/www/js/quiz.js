@@ -18,12 +18,17 @@ window.addEventListener("load", function(){
 	var radioseven = document.getElementById("qu-two-la-three");
 	var radioeight = document.getElementById("qu-two-la-four");
 	
+	/* 	FRAGE 3 */
 	var radionine = document.getElementById("qu-three-la-one");
 	var radioten = document.getElementById("qu-three-la-two");
 	var radioeleven = document.getElementById("qu-three-la-three");
 	var radiotwelve = document.getElementById("qu-three-la-four");
 	
-
+	/* 	FRAGE 4 */
+	var radiothirteen = document.getElementById("qu-four-la-one");
+	var radiotfourteen = document.getElementById("qu-four-la-two");
+	var radiofifteen = document.getElementById("qu-four-la-three");
+	var radiosixteen = document.getElementById("qu-four-la-four");
 
 	//Frage 1 - Antwort 1 richtig
 
@@ -137,6 +142,43 @@ window.addEventListener("load", function(){
 		questionnumber[2].classList.remove("question-true");
 	})
 
+	//Frage 4 - Antwort 2 richtig
+	radiothirteen.addEventListener("click", function(){
+		radiothirteen.classList.add("label-false");
+		questionnumber[3].classList.add("question-false");
+		questionnumber[3].classList.remove("question-true");
+		radiotfourteen.classList.add("label-inactive");
+		radiofifteen.classList.add("label-inactive");
+		radiosixteen.classList.add("label-inactive");
+	})
+
+	radiotfourteen.addEventListener("click", function(){
+		radiothirteen.classList.add("label-inactive");
+		radiotfourteen.classList.add("label-true");
+		questionnumber[3].classList.add("question-true");
+		questionnumber[3].classList.remove("question-false");
+		radiofifteen.classList.add("label-inactive");
+		radiosixteen.classList.add("label-inactive");
+	})
+
+	radiofifteen.addEventListener("click", function(){
+		radiothirteen.classList.add("label-inactive");
+		radiotfourteen.classList.add("label-inactive");
+		radiofifteen.classList.add("label-false");
+		questionnumber[3].classList.add("question-false");
+		questionnumber[3].classList.remove("question-true");
+		radiosixteen.classList.add("label-inactive");
+	})
+
+	radiosixteen.addEventListener("click", function(){
+		radiothirteen.classList.add("label-inactive");
+		radiotfourteen.classList.add("label-inactive");
+		radiofifteen.classList.add("label-inactive");
+		radiosixteen.classList.add("label-false");
+		questionnumber[3].classList.add("question-false");
+		questionnumber[3].classList.remove("question-true");
+	})
+
 });
 
 
@@ -194,6 +236,22 @@ function getthree(){
 	return stepthree;
 }
 
+// FRAGE 4
+function getfour(){
+	var two = document.getElementById("qu-four-ans-two");
+	var stepfour;
+
+	if(two.checked){
+		stepfour = 1;
+	}
+
+	else {
+		stepfour = 0;
+	}
+
+	return stepfour;
+}
+
 
 
 function getscore(){
@@ -206,11 +264,12 @@ function getscore(){
 
 	var livescore = document.getElementById("livescore");
 	var percent = document.getElementById("percent");
-	score = getone() +gettwo() +getthree();
+	score = getone() +gettwo() +getthree() +getfour();
 	livescore.innerHTML = score;
 	alert("Frage 1:" +getone());
 	alert("Frage 2:" +gettwo());
 	alert("Frage 3:" +getthree());
+	alert("Frage 4:" +getfour());
 	alert("Gesamte:" +score);
 
 
@@ -231,6 +290,10 @@ function getscore(){
 		percent.style.width = "30%"
 		notificationlist.innerHTML = notificationthree +currentnotificationlist;
 
+	}
+
+	if(score == 4){
+		percent.style.width = "40%"
 	}
 
 	var notificationquantity = document.getElementById("notificationlist").childElementCount;
