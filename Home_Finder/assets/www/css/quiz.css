@@ -181,8 +181,6 @@ input, label, textarea, select {
 	margin: auto;
 }
 
-
-
 .active-radio {
 	background: var(--grey);
 	color: #fff !important;
@@ -206,7 +204,7 @@ input, label, textarea, select {
 }
 
 .label-inactive {
-	/* pointer-events: none; */
+	/* pointer-events: none;  AKTIVIEREN*/
 	opacity: .1;
 }
 
@@ -220,7 +218,7 @@ input, label, textarea, select {
 .label-true::after {
 	position: absolute;
 	right: 10px;
-	top: 12px;
+	top: 16px;
 	font-size: 16px;
 	font-family: 'Material Icons';
 	color: #fff;
