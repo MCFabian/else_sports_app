@@ -11,17 +11,23 @@ body {
 }
 
 main {
-    padding: 95px 30px 15px 30px;
+    padding: 85px 30px 15px 30px;
     overflow-y: auto;
     overflow-x: hidden;
     background-image: url("../img/background_pattern.png");
     background-position: 0 85%;
     background-size: 120px;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	overflow: hidden;
 }
 
-main#home {
-    overflow: hidden;
+main#home, main#actswindow {
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+
+#actswindow {
+	display: none;
 }
 
 .solid_overlay {
@@ -30,7 +36,7 @@ main#home {
 	transition: 0.4s;
 	flex-direction: column;
 	right: 0;
-	bottom: 0;
+	bottom: -100%;
 	position: fixed;
 	height: 65%; 
 	display: block;
@@ -39,6 +45,12 @@ main#home {
 	padding: 50px 30px 0 30px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	z-index: 1;
+	transition: bottom .3s ease-in-out;
+  }
+
+  .solid_overlay.open {
+	bottom: 0; 
   }
 
   .solid_overlay_inner {
@@ -59,10 +71,20 @@ main#home {
 	margin-bottom: 15px;
   }
 
+  .solid_overlay_inner ul {
+	  list-style-position: inside;
+	  padding: 0;
+  }
+
+  .solid_overlay_inner ul li {
+	  font-size: 14px;
+	  color: var(--lightgrey);
+  }
+
 
 hr {
 	height: 1px;
-	background: #F3F4F8;
+	background: #DEDEF5;
 	border: none;
 	width: 100%;
 	display: block;
@@ -100,6 +122,11 @@ p {
 
 p.hint {
 	color: var(--lightgrey);
+}
+
+.link {
+	color: var(--red);
+	font-weight: 600;
 }
 
 .button-placer {

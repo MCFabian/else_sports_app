@@ -5,6 +5,7 @@
 		<!-- scripts   -->
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" src="js/bb.js"></script>
+		<script type="text/javascript" src="js/quiz.js"></script>
 		
 		<!-- <script type="text/javascript" src="js/cordova.js"></script> -->
 		<!-- <script type="text/javascript" src="js/barcodescanner.js"></script> -->
@@ -12,6 +13,7 @@
 		<!-- CSS   -->
 		<link href="css/global.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/quiz.css" rel="stylesheet" type="text/css" />
 		<link href="css/variables.css" rel="stylesheet" type="text/css" />
 		<link href="css/fonts.css" rel="stylesheet" type="text/css" />
 		<link href="css/icons.css" rel="stylesheet" type="text/css" />
@@ -23,11 +25,12 @@
 	</head>
 	
 	<body>
+		<!-- OVERLAY -->
 		<div id="overlay"></div>
 		<div id="wrapper">
 			<div id="notification_overlay" class="slide_overlay">
-				<h1 id="" class="red page_title">Benachrichtigungen</h1>
-				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
+				<h1 class="red pagetitle">Benachrichtigungen</h1>
+				<p class="hint pagehint">Hier findest du verpasste Ereignisse.</p>
 
 				<ul id="notificationlist">
 					<li class="card notifications-card">
@@ -43,19 +46,24 @@
 				</div>
 			</div>
 			<nav id="nav">
-				<h1 id="" class="red page_title">Menü</h1>
-				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 class="red pagetitle">Menü</h1>
+				<p class="hint pagehint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 				<ul>
 					<li>
-						<a class="card card-programm " href='#'>
+						<a class="card card-home" href='index.html'>
+							<h2>Home</h2>
+						</a>
+					</li>
+					<li>
+						<a class="card acts card-programm " href='#'>
 							<h2>Programm-Info</h2>
 							<small>Erfahre mehr über die Acts.</small>
 						</a>
 					</li>
 					<li>
-						<a class="card card-game " href='#'>
-							<h2>Programm-Info</h2>
-							<small>Erfahre mehr über die Acts.</small>
+						<a class="card card-game quiztrigger" href='#'>
+							<h2>Quiz</h2>
+							<small>Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</small>
 							<button onclick="readQR()" id="menuscanner">
 								<span class="icon">edit</span>QR-Code scannen
 							</button>
@@ -81,8 +89,8 @@
 
 				<div id="inner-footer">
 					<ul>
-						<li><a href="pages/privacy.html">Datenschutz</a></li>
-						<li><a href="pages/imprint.html">Impressum</a></li>
+						<li><a id="privacy" href="#">Datenschutz</a></li>
+						<li><a id="imprint" href="#">Impressum</a></li>
 					</ul> 
 				</div>
 			</nav>
@@ -90,7 +98,7 @@
 			<div id="nav-holder">
 				<ul>
 					<li>
-						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--minus toogle" type="button">
+						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--spring toogle" type="button">
 							<span class="hamburger-box">
 							<span class="hamburger-inner"></span>
 							</span>
@@ -103,14 +111,333 @@
 					</li>
 				</ul>
 			</div>
-			<!--MAIN-CONTENT -->
-			<main id="home">
-				<h1 class="red page_title">Willkommen</h1>
-				<p class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 
-				<ul id="homecards">
+			<main id="actswindow">
+				<h1 class="blue pagetitle">Programm</h1>
+				<p class="hint pagehint">Erfahre alles über die geplanten Acts.</p>
+
+				<div class="filter">
+					<input onkeyup="tablefilter()" id="search" placeholder="Nach Auftritten suchen" type="text" name="" id="">
+					<button class="icon">swap_vert</button>
+				</div>
+
+				<a id="programm" class="card" href="#">
+					<div class="card-img-holder">
+						<img src="img/example.png" alt="$">
+					</div>
+					<div class="homecards-text">
+						<div class="homecards-icon" id="programm-icon"></div>
+						<div >
+							<small>Aktuell läuft:</small>
+							<h2>Begrüßungsrede der Schulleitungen</h2>
+						</div>
+					</div>
+					<span></span>
+				</a>
+				<hr>
+				<ul id="acts">
 					<li>
 						<a id="programm" class="card" href="#">
+							<div class="homecards-text">
+								<div class="homecards-icon" id="programm-icon"></div>
+								<div >
+									<small>Aktuell läuft:</small>
+									<h2 class="searchfortext">Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<span></span>
+						</a>
+					</li>
+				</ul>
+				<div class="classic-btn" id="actsout">Home</div>
+			</main>
+
+			<!--MAIN-CONTENT -->
+			<main id="home">
+				<h1 id="pagetitle" class="red pagetitle">Willkommen</h1>
+				<p id="pagehint" class="hint pagehint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+
+
+				<!-- QUIZ -->
+				<!-- QUIZ 1 -->
+				<div id="quizwindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+						<div class="slideshow-container">
+							<div class="mySlides fade center">
+								<h3>Hey, sag mal, wie ist dein Name?</h3>
+								<p>Ich würde dich gern persönlich kennenlernen. Um dir ein paar Fragen zu stellen, kannst du mir gern deinen Namen verraten. Das ist aber kein Muss, nur etwas unpersönlicher. </p>
+								<label for="name">Dein Name (optional)</label>
+								<input placeholder="Max" class="input-lg btn-center" id="name" type="text">
+							</div>
+							
+							<div class="mySlides fade">
+								<div id="start-img"></div>
+								<h3 id="welcome"></h3>
+								<p>Nachfolgend werden <strong>dir fünf Fragen gestellt.</strong> Du kannst vor dem Beantworten jederzeit nachlesen. <br> Viel Spaß mit dem Quiz.</p>
+							</div>
+							<!-- Frage 1 -->
+							<div class="mySlides fade">
+								<p>Welcher dieser Begriffe beschreibt ebenalls das Format <strong>Scripted Reality?</strong></p>
+								<label id="qu-one-la-one" class="long-label" for="qu-one-ans-one">
+									<strong>1.</strong>
+									<div>Dokumentationen</div>
+									<input type="radio" name="one" id="qu-one-ans-one">
+								</label>
+		
+								<label id="qu-one-la-two" class="long-label" for="qu-one-ans-two">
+									<strong>2.</strong>
+									<div>Spielfilme</div>
+									<input type="radio" name="one" id="qu-one-ans-two">
+								</label>
+		
+								<label id="qu-one-la-three" class="long-label" for="qu-one-ans-three">
+									<strong>3.</strong>
+									<div>Doku-Soap oder Reality-Soap</div>
+									<input type="radio" name="one" id="qu-one-ans-three">
+								</label>
+		
+							  </div>
+							  <!-- Frage 2 -->
+							  <div class="mySlides fade">
+								<p>Was sind typische Merkmale für die dramaturgische Handlung einer Doku-Soap?</p>
+								<label id="qu-two-la-one" class="long-label" for="qu-two-ans-one">
+									<strong>1.</strong>
+									<div>Die realitätstreue Darstellung wahrer Ergebnisse.</div>
+									<input type="radio" name="two" id="qu-two-ans-one">
+								</label>
+								<label id="qu-two-la-two" class="long-label" for="qu-two-ans-two">
+									<strong>2.</strong>
+									<div>Überspitze reale Ergebnisse, präsentiert mit einer Menge Emotionen.</div>
+									<input type="radio" name="two" id="qu-two-ans-two">
+								</label>
+							  </div>
+								<!-- Frage 3 -->
+								<div class="mySlides fade">
+									<p>Nachfolgend kannst du dir eine Seqzuenz ansehen. <strong>Entscheide selbstständig</strong>, ob diese aus einem Scripted Reality Format entsprang.</p>
+									<div class="video-container">
+										<video controls src="src/img/wiso-clip.mp4"></video>
+									</div>
+									<div class="flex">
+										<label id="qu-three-la-one" class="long-label" for="qu-three-ans-one">
+											<strong>1.</strong>
+											<div>Scripted-Reality-Formt</div>
+											<input type="radio" name="three" id="qu-three-ans-one">
+										</label>
+										<label id="qu-three-la-two" class="long-label" for="qu-three-ans-two">
+											<strong>2.</strong>
+											<div>Kein Scripted-Reality-Formt</div>
+											<input type="radio" name="three" id="qu-three-ans-two">
+										</label>
+									</div>
+								</div>
+								<!-- Frage 4 -->
+								<div class="mySlides fade">
+									<p>Scripted-Reality-Formate können gerade von jungen Zuschauergruppen nicht von einer dokumentarischen Berichterstattung unterschieden werden und somit als real empfunden werden. <br><strong>Ab welchem Alter ist man in der Lage, Wirklichkeit und Scripted-Reality zu unterscheiden?</strong></p>
+									<div class="flex">
+										<label id="qu-four-la-one" class="square-label" for="qu-four-ans-one">
+											<div id="kids1-img"></div>
+											<div>5-7 Jahre</div>
+											<input type="radio" name="four" id="qu-four-ans-one">
+										</label>
+										<label id="qu-four-la-two" class="square-label" for="qu-four-ans-two">
+											<div id="kids2-img"></div>
+											<div>7-9 Jahre</div>
+											<input type="radio" name="four" id="qu-four-ans-two">
+										</label>
+										<label id="qu-four-la-three" class="square-label" for="qu-four-ans-three">
+											<div id="kids3-img"></div>
+											<div>12-17 Jahre</div>
+											<input type="radio" name="four" id="qu-four-ans-three">
+										</label>
+									</div>
+								</div>
+								<!-- Frage 5 -->
+								<div class="mySlides fade"><p>Kinder und Jugendliche sind eine großze Ziel- und Altersgruppe von Reality-Soaps. <br> Welche der aufgeführten Zielgruppen/Personen soll direkt mit dem Format Scripted-Reality angesprochen werden?</p>
+									
+										<label id="qu-five-la-one" class="long-label" for="qu-five-ans-one">
+											<strong>1.</strong>
+											<div>Arbeitslose und Hausfrauen</div>
+											<input type="radio" name="five" id="qu-five-ans-one">
+										</label>
+										<label id="qu-five-la-two" class="long-label" for="qu-five-ans-two">
+											<strong>2.</strong>
+											<div>Berufstätige und Pendler</div>
+											<input type="radio" name="five" id="qu-five-ans-two">
+										</label>
+								</div>
+								<!-- Auswertung -->
+								<div class="mySlides fade">
+									<div id="end-img"></div>
+									<p id="hide">Na, bist du schon gespannt, wie viele Fragen du richtig beantwortet hast?</p>
+									<h3 id="score"></h3>
+									<button id="end" onclick="getscore()" class="agree-btn"><i class="icon">poll</i>Ergebnis berechnen</button>
+								</div>
+						</div>
+						<div id="dot-container" style="text-align:center">
+							<span class="dot" onclick="currentSlide(1)"></span> 
+							<span class="dot" onclick="currentSlide(2)"></span> 
+							<span class="dot" onclick="currentSlide(3)"></span> 
+							<span class="dot" onclick="currentSlide(4)"></span> 
+							<span class="dot" onclick="currentSlide(5)"></span> 
+							<span class="dot" onclick="currentSlide(6)"></span> 
+							<span class="dot" onclick="currentSlide(7)"></span> 
+							<span class="dot" onclick="currentSlide(8)"></span> 
+						</div>
+						<div class="pop-end">
+							<button onclick="plusSlides(-1)" class="list-btn">Zurück</button>
+							<button id="quizout" class="cancel-btn">Schließen</button>
+							<button id="next" onclick="plusSlides(1)" class="stn-btn">Weiter</button>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- IMPRESSUM -->
+                <div id="imprintwindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+                        <strong>Angaben gemäß § 5 TM</strong><br>
+                        <p class="hint">
+							Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+						</p>
+						<strong>Fabian Rauer</strong>
+						<p class="hint">
+							Schiller-Straße 18<br>
+							03222 Lübbenau<br>
+							E-Mail: <a class="link" href="mailto:info@fabianr.de">info[at]fabianr.de</a>
+						</p>
+						<p class="hint">
+							Die verantwortliche Stelle entscheidet allein über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.). 
+						</p>
+                        <strong>Angaben</strong><br>
+                        <p class="hint">
+                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
+						</p>
+						<strong>Bild- und Videomaterial</strong>
+						<p class="hint">
+							Das Urheberrecht des hier ausgestellten Video- als auch Bildmaterial unterliegt allein Fabian Rauer.
+						</p>
+						<p class="hint">
+							Ohne einer schriftlichen Zustimmung des Betreibers ist es nicht gestattet, dass ausgestellte Bild- oder Videomaterial öffentlich darzustellen, zu verwenden oder mit einem kommerziellen Nutzen weiterzuverwenden. Ohne besagtes Einverständnis werden rechtliche Schritte und Konsequenzen drohen	
+						</p>
+                        <div class="button-placer">
+                            <a href="#" id="imprintout" class="classic-btn">Zurück zu Home</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+				<!-- DATENSCHUTZ -->
+				<div id="privacywindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+                        <strong>Allgemeiner Hinweis & Pflichtinformationen</strong><br>
+                        <p class="hint">
+                            Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+						</p>
+						<strong>Fabian Rauer</strong><br>
+						<p class="hint">
+							Schiller-Straße 18<br>
+							03222 Lübbenau<br>
+							E-Mail: <a class="link" href="mailto:info@fabianr.de">info[at]fabianr.de</a>
+						</p>
+						<p class="hint">
+							Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.). 
+						</p>
+						<strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong>
+						<p class="hint">
+							Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt. 
+						</p>
+						<strong>
+							Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde
+						</strong>
+						<p class="hint">
+							Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: 
+							<br><br>
+							<a class="link" href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html.</a>
+						</p>
+						<strong>Recht auf Datenübertragbarkeit</strong>
+						<p class="hint">
+							Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist. 
+						</p>
+						<strong>Recht auf Auskunft, Berichtigung, Sperrung, Löschung</strong>
+						<p class="hint">
+							Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.
+						</p>
+						<strong>SSL- bzw. TLS-Verschlüsselung</strong>
+						<p class="hint">
+							Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über diese Website übermitteln, für Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile. 
+						</p>
+						<strong>Server-Log-Dateien</strong>
+						<p class="hint">In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch Informationen, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+						</p>
+						<ul>
+							<li>Besuchte Seite auf unserer Domain</li>
+							<li>Datum und Uhrzeit der Serveranfrage</li>
+							<li>Browsertyp und Browserversion</li>
+							<li>Verwendetes Betriebssystem</li>
+							<li>Referrer URL</li>
+							<li>Hostname des zugreifenden Rechners</li>
+							<li>IP-Adresse</li>
+						</ul>
+						<p class="hint">
+							Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet. 
+						</p>
+
+                        <div class="button-placer">
+                            <a href="#" id="privacyout" class="classic-btn">Zurück zu Home</a>
+                        </div>
+                    </div>
+				</div>
+				
+				<!-- ACT-LIST -->
+				<div style="display: none;" id="actswindow" class="solid_overlay">
+                    <div class="solid_overlay_inner">
+						<div class="filter">
+							<input onkeyup="tablefilter()" id="search" placeholder="Nach Auftritten suchen" type="text" name="" id="">
+							<button class="icon">swap_vert</button>
+						</div>
+		
+						<a id="programm" class="card" href="#">
+							<div class="card-img-holder">
+								<img src="img/example.png" alt="$">
+							</div>
+							<div class="homecards-text">
+								<div class="homecards-icon" id="programm-icon"></div>
+								<div >
+									<small>Aktuell läuft:</small>
+									<h2>Begrüßungsrede der Schulleitungen</h2>
+								</div>
+							</div>
+							<span></span>
+						</a>
+						<hr>
+						<ul id="acts">
+							<li>
+								<a id="programm" class="card" href="#">
+									<div class="homecards-text">
+										<div class="homecards-icon" id="programm-icon"></div>
+										<div >
+											<small>Aktuell läuft:</small>
+											<h2 class="searchfortext">Begrüßungsrede der Schulleitungen</h2>
+										</div>
+									</div>
+									<span></span>
+								</a>
+							</li>
+						</ul>
+						<div class="classic-btn" id="actsout">Home</div>
+                    </div>
+				</div>
+
+
+
+				<!-- HOME -->
+				<ul id="homecards">
+					<li>
+						<a id="programm" class="card acts" href="#">
 							<div class="card-img-holder">
 								<img src="img/example.png" alt="$">
 							</div>
@@ -126,12 +453,12 @@
 						<a class="card-subtitle" href="#">Danach: <strong>asdasdasdsa</strong><span class="icon">arrow_forward</span></a>
 					</li>
 					<li>
-						<a id="game" class="card" href="#">
+						<a id="game" class="card quiztrigger" href="#">
 							<div class="homecards-text">
 								<div class="homecards-icon" id="game-icon"></div>
 								<div>
-									<small>Aktuell läuft:</small>
-									<h2>Begrüßungsrede der Schulleitungen</h2>
+									<small>Scannen und Gewinnen</small>
+									<h2>Suche alle QR-Codes und beantworte die Fragen</h2>
 								</div>
 							</div>
 							<span id="progress-indicator"><div id="percent"></div></span>
@@ -148,11 +475,10 @@
 							</div>
 							
 						</a>
-						<a class="card-subtitle" href="#"> <strong>5/10 Fragen gelöst.</strong></a>
 					</li>
 				</ul>
-
 			</main>
+			<!-- CODESANNER FIX -->
 			<div id="scann-bar">
 				QR-Code scannen
 				<button class="icon" id="button1" onClick="readQR()">close</button>

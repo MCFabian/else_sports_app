@@ -26,8 +26,8 @@
 		<div id="overlay"></div>
 		<div id="wrapper">
 			<div id="notification_overlay" class="slide_overlay">
-				<h1 id="" class="red page_title">Benachrichtigungen</h1>
-				<p id="" class="hint page_hint">Hier findest du verpasste Ereignisse.</p>
+				<h1 id="" class="red pagetitle">Benachrichtigungen</h1>
+				<p id="" class="hint pagehint">Hier findest du verpasste Ereignisse.</p>
 
 				<ul id="notificationlist">
 					<li class="card notifications-card">
@@ -43,9 +43,14 @@
 				</div>
 			</div>
 			<nav id="nav">
-				<h1 id="" class="red page_title">Menü</h1>
-				<p id="" class="hint page_hint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
+				<h1 id="" class="red pagetitle">Menü</h1>
+				<p id="" class="hint pagehint">Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</p>
 				<ul>
+					<li>
+						<a class="card card-home" href='../index.html'>
+							<h2>Home</h2>
+						</a>
+					</li>
 					<li>
 						<a class="card card-programm " href='#'>
 							<h2>Programm-Info</h2>
@@ -54,8 +59,8 @@
 					</li>
 					<li>
 						<a class="card card-game " href='#'>
-							<h2>Programm-Info</h2>
-							<small>Erfahre mehr über die Acts.</small>
+							<h2>Quiz</h2>
+							<small>Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!</small>
 							<button onclick="readQR()" id="menuscanner">
 								<span class="icon">edit</span>QR-Code scannen
 							</button>
@@ -90,7 +95,7 @@
 			<div id="nav-holder">
 				<ul>
 					<li>
-						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--minus toogle" type="button">
+						<button onclick="toggleMenu()" id="bb-btn" class="hamburger hamburger--spring toogle" type="button">
 							<span class="hamburger-box">
 							<span class="hamburger-inner"></span>
 							</span>
@@ -104,27 +109,17 @@
 				</ul>
 			</div>
 			<!--MAIN-CONTENT -->
-			<main id="home">
-				<h1 class="red page_title">Datenschutz</h1>
-				<p class="hint page_hint">Erklärung und Einstellungen</p>
-
-                <div class="solid_overlay">
-                    <div class="solid_overlay_inner">
-                        <strong>Angaben</strong><br>
-                        <p class="hint">
-                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
-                        </p>
-                        <strong>Angaben</strong><br>
-                        <p class="hint">
-                            Ich übernehme keine Haftung für die Korrektheit der Inhalte von externen Webseiten, die auf dieser Domain verlinkt sind.
-                        </p>
-                        <div class="button-placer">
-                            <a href="../index.html" class="classic-btn">Zurück zu Home</a>
-                        </div>
-                    </div>
-                </div>
+			<main id="act-list">
+				<h1 class="blue pagetitle">Programm</h1>
+				<p class="hint pagehint">Erfahre alles über die geplanten Acts.</p>
+				
 
 			</main>
 		</div>
 	</body>
+
+	<script>
+
+	</script>
+
 </html>

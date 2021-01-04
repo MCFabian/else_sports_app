@@ -11,7 +11,7 @@
 	text-align: center;
 	color: #fff;
 	font-size: 14px;
-	box-shadow: 0px 0px 32px 0px rgba(165, 165, 165, 0.3);
+	box-shadow: 20px 20px 32px 40px rgb(255, 255, 255);
 }
 #scann-bar button {
 	position: absolute;
@@ -28,19 +28,17 @@
 	border-radius: 20px;
 }
 
-
-
-.page_title {
+.pagetitle {
 	position: relative;
 	z-index: 0;
 	padding: 0 15px;
 }
 
-.page_hint {
+.pagehint {
 	padding: 0 15px;
 }
 
-.page_title::after {
+.pagetitle::after {
 	background-image: url("../img/menu_pattern.png");
 	background-position: left;
 	background-size: contain;
@@ -81,6 +79,13 @@
 .card-programm {
 	background: var(--blue);
 	position: relative;
+	overflow: hidden;
+}
+
+.card-home {
+	background: var(--grey);
+	position: relative;
+	overflow: hidden;
 }
 
 .card-game {
@@ -89,6 +94,7 @@
 	padding: 0;
 	padding-top: 15px;
 	width: 100%;
+	overflow: hidden;
 }
 
 .card-game h2, .card-game small, .card-game button {
@@ -109,7 +115,7 @@
 
 .card-media {
 	background: #6CC2B5;
-
+	overflow: hidden;
 }
 
 #menuscanner {
@@ -142,6 +148,20 @@
 
 #fischer {
 	background-image: url("../img/menu_fischer.png");
+}
+
+.card-home::after {
+	content: "home";
+	font-family: 'Material Icons';
+	right: 15px;
+	color: #fff;
+	font-size: 70px;
+	bottom: -25px;
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: cover;
+	position: absolute;
+	opacity: .3;
 }
 
 .card-programm::after {
@@ -346,4 +366,81 @@
 }
 
 
+/* PROGRAMM_LIST */
 
+.filter {
+	padding-top: 30px;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 15px;
+}
+
+.filter input::placeholder {
+	color: #8b8996;
+	font-weight: 600;
+}
+
+.filter input {
+	background: #E0E0E9;
+	padding: 12px;
+	color: var(--grey);
+	border-radius: 5px;
+	border: none;
+	box-shadow: none;
+	width: calc(100% - 55px);
+}
+
+.filter button {
+	width: 43px;
+	height: 43px;
+	border-radius: 5px;
+	background: #E0E0E9;
+	color: var(--grey);
+	border: none;
+	box-shadow: none;
+	font-size: 18px;
+	margin: auto 0 auto 15px;
+}
+
+.filter button:focus {
+	animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) ;
+}
+
+#acts {
+	list-style: none;
+	padding: 0;
+}
+ @-webkit-keyframes scale-up-center {
+	0% {
+			  background: #E0E0E9;
+			  color: var(--grey);
+
+	}
+	90% {
+			  color: #fff;
+			  background: var(--grey);
+	}
+
+	1000% {
+		-webkit-transform: scale(1);
+				transform: scale(1);
+				background: #E0E0E9;
+				color: var(--grey);
+	  }
+  }
+  @keyframes scale-up-center {
+	0% {
+		background: #E0E0E9;
+		color: var(--grey);
+	}
+	90% {
+		color: #fff;
+		background: var(--grey);
+	}
+
+	1000% {
+				background: #E0E0E9;
+				color: var(--grey);
+	  }
+  }
+  
