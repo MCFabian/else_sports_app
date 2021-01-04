@@ -1,10 +1,13 @@
-#notificationquizthree>.notifications-icon {
+#notificationquizthree>.notifications-icon,
+#notificationquizfive>.notifications-icon {
 	background: #e4cbf8;
 	background-image: url("../img/emoji/rising.png");
 	background-size: 25px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+
 
 #livescore {
 	display: inline-block;

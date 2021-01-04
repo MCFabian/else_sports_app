@@ -30,6 +30,12 @@ window.addEventListener("load", function(){
 	var radiofifteen = document.getElementById("qu-four-la-three");
 	var radiosixteen = document.getElementById("qu-four-la-four");
 
+	/* 	FRAGE 5 */
+	var radioseventeen = document.getElementById("qu-five-la-one");
+	var radioteighteen = document.getElementById("qu-five-la-two");
+	var radionineteen= document.getElementById("qu-five-la-three");
+	var radiostwenty = document.getElementById("qu-five-la-four");
+
 	//Frage 1 - Antwort 1 richtig
 
 	radioone.addEventListener("click", function(){
@@ -179,6 +185,43 @@ window.addEventListener("load", function(){
 		questionnumber[3].classList.remove("question-true");
 	})
 
+	//Frage 5 - Antwort 4 richtig
+	radioseventeen.addEventListener("click", function(){
+		radioseventeen.classList.add("label-false");
+		questionnumber[4].classList.add("question-false");
+		questionnumber[4].classList.remove("question-true");
+		radioteighteen.classList.add("label-inactive");
+		radionineteen.classList.add("label-inactive");
+		radiostwenty.classList.add("label-inactive");
+	})
+
+	radioteighteen.addEventListener("click", function(){
+		radioseventeen.classList.add("label-inactive");
+		radioteighteen.classList.add("label-false");
+		questionnumber[4].classList.add("question-false");
+		questionnumber[4].classList.remove("question-true");
+		radionineteen.classList.add("label-inactive");
+		radiostwenty.classList.add("label-inactive");
+	})
+
+	radionineteen.addEventListener("click", function(){
+		radioseventeen.classList.add("label-inactive");
+		radioteighteen.classList.add("label-inactive");
+		radionineteen.classList.add("label-false");
+		questionnumber[4].classList.add("question-false");
+		questionnumber[4].classList.remove("question-true");
+		radiostwenty.classList.add("label-inactive");
+	})
+
+	radiostwenty.addEventListener("click", function(){
+		radioseventeen.classList.add("label-inactive");
+		radioteighteen.classList.add("label-inactive");
+		radionineteen.classList.add("label-inactive");
+		radiostwenty.classList.add("label-true");
+		questionnumber[4].classList.add("question-true");
+		questionnumber[4].classList.remove("question-false");
+	})
+
 });
 
 
@@ -252,6 +295,22 @@ function getfour(){
 	return stepfour;
 }
 
+// FRAGE 5
+function getfive(){
+	var four = document.getElementById("qu-five-ans-four");
+	var stepfive;
+
+	if(four.checked){
+		stepfive = 1;
+	}
+
+	else {
+		stepfive = 0;
+	}
+
+	return stepfive;
+}
+
 
 
 function getscore(){
@@ -260,16 +319,17 @@ function getscore(){
 	var notificationlist = document.getElementById("notificationlist");
 	var currentnotificationlist = document.getElementById("notificationlist").innerHTML;
 	var notificationthree = " <li id='notificationquizthree' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Drei Richtige!</h2> <small>Du hast schon 3 Fragen richtig beantwortet.</small> </div> </li>";
-
+	var notificationfive = " <li id='notificationquizfive' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Fünf Richtige!</h2> <small>Du hast schon 5 Fragen richtig beantwortet.</small> </div> </li>";
 
 	var livescore = document.getElementById("livescore");
 	var percent = document.getElementById("percent");
-	score = getone() +gettwo() +getthree() +getfour();
+	score = getone() +gettwo() +getthree() +getfour() +getfive();
 	livescore.innerHTML = score;
 	alert("Frage 1:" +getone());
 	alert("Frage 2:" +gettwo());
 	alert("Frage 3:" +getthree());
 	alert("Frage 4:" +getfour());
+	alert("Frage 5:" +getfive());
 	alert("Gesamte:" +score);
 
 
@@ -286,7 +346,7 @@ function getscore(){
 		percent.style.width = "20%"
 	}
 
-	if(score == 3){
+	if(score >= 3){
 		percent.style.width = "30%"
 		notificationlist.innerHTML = notificationthree +currentnotificationlist;
 
@@ -294,6 +354,12 @@ function getscore(){
 
 	if(score == 4){
 		percent.style.width = "40%"
+	}
+
+	if(score >= 5){
+		percent.style.width = "50%"
+		notificationlist.innerHTML = notificationfive +currentnotificationlist;
+
 	}
 
 	var notificationquantity = document.getElementById("notificationlist").childElementCount;
