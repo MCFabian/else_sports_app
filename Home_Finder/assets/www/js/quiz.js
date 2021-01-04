@@ -48,6 +48,12 @@ window.addEventListener("load", function(){
 	var radiostwentyseven = document.getElementById("qu-seven-la-three");
 	var radiostwentyeight= document.getElementById("qu-seven-la-four");
 
+	/* 	FRAGE 8 */
+	var radiotwentynine = document.getElementById("qu-eight-la-one");
+	var radiotthirty = document.getElementById("qu-eight-la-two");
+	var radiosthirtyone = document.getElementById("qu-eight-la-three");
+	var radiosthirtytwo= document.getElementById("qu-eight-la-four");
+
 
 
 	//Frage 1 - Antwort 1 richtig
@@ -310,6 +316,43 @@ window.addEventListener("load", function(){
 		questionnumber[6].classList.remove("question-true");
 	})
 
+	//Frage 8 - Antwort 3 richtig
+	radiotwentynine.addEventListener("click", function(){
+		radiotwentynine.classList.add("label-false");
+		questionnumber[7].classList.add("question-false");
+		questionnumber[7].classList.remove("question-true");
+		radiotthirty.classList.add("label-inactive");
+		radiosthirtyone.classList.add("label-inactive");
+		radiosthirtytwo.classList.add("label-inactive");
+	})
+
+	radiotthirty.addEventListener("click", function(){
+		radiotwentynine.classList.add("label-inactive");
+		radiotthirty.classList.add("label-false");
+		questionnumber[7].classList.add("question-false");
+		questionnumber[7].classList.remove("question-true");
+		radiosthirtyone.classList.add("label-inactive");
+		radiosthirtytwo.classList.add("label-inactive");
+	})
+
+	radiosthirtyone.addEventListener("click", function(){
+		radiotwentynine.classList.add("label-inactive");
+		radiotthirty.classList.add("label-inactive");
+		radiosthirtyone.classList.add("label-true");
+		questionnumber[7].classList.add("question-true");
+		questionnumber[7].classList.remove("question-false");
+		radiosthirtytwo.classList.add("label-inactive");
+	})
+
+	radiosthirtytwo.addEventListener("click", function(){
+		radiotwentynine.classList.add("label-inactive");
+		radiotthirty.classList.add("label-inactive");
+		radiosthirtyone.classList.add("label-inactive");
+		radiosthirtytwo.classList.add("label-false");
+		questionnumber[7].classList.add("question-false");
+		questionnumber[7].classList.remove("question-true");
+	})
+
 });
 
 
@@ -431,6 +474,22 @@ function getseven(){
 	return stepseven;
 }
 
+// FRAGE 8
+function geteight(){
+	var three = document.getElementById("qu-eight-ans-three");
+	var stepeight;
+
+	if(three.checked){
+		stepeight = 1;
+	}
+
+	else {
+		stepeight = 0;
+	}
+
+	return stepeight;
+}
+
 
 
 function getscore(){
@@ -443,7 +502,7 @@ function getscore(){
 
 	var livescore = document.getElementById("livescore");
 	var percent = document.getElementById("percent");
-	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven();
+	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight();
 	livescore.innerHTML = score;
 	alert("Frage 1:" +getone());
 	alert("Frage 2:" +gettwo());
@@ -452,6 +511,7 @@ function getscore(){
 	alert("Frage 5:" +getfive());
 	alert("Frage 6:" +getsix());
 	alert("Frage 7:" +getseven());
+	alert("Frage 8:" +geteight());
 	alert("Gesamte:" +score);
 
 
@@ -480,11 +540,28 @@ function getscore(){
 	if(score >= 5){
 		percent.style.width = "50%"
 		notificationlist.innerHTML = notificationfive +currentnotificationlist;
-
 	}
 
 	if(score == 6){
 		percent.style.width = "60%"
+	}
+
+	if(score == 7){
+		percent.style.width = "70%"
+	}
+
+	if(score == 8){
+		percent.style.width = "80%"
+	}
+
+	if(score >= 9){
+		percent.style.width = "90%"
+		notificationlist.innerHTML = notificationfive +currentnotificationlist;
+	}
+
+	if(score == 10){
+		percent.style.width = "100%"
+		notificationlist.innerHTML = notificationfive +currentnotificationlist;
 	}
 
 	var notificationquantity = document.getElementById("notificationlist").childElementCount;
