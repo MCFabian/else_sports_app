@@ -5,10 +5,16 @@
 	height: 100%;
 	display: block;
 	position: fixed;
-	z-index: 99;
+	z-index: 3;
 	overflow: hidden;
 	top: 0;
 	left: 0;
+	transition: opacity .3s ;
+}
+
+#entrypage .slide_overlay,
+#entrypage .slide_overlay_static {
+	pointer-events: all;
 }
 
 #entrypage #wave {

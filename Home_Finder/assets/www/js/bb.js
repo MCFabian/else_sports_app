@@ -107,6 +107,7 @@ window.addEventListener("load", function(){
 
     /* OPEN  IMPRINT */
     var imprinttrigger = document.getElementById("imprint");
+    var entryinmprint = document.getElementById("entryinmprint");
     var imprintwindow = document.getElementById("imprintwindow");
     var imprintout = document.getElementById("imprintout");
 
@@ -130,6 +131,27 @@ window.addEventListener("load", function(){
         }
     });
 
+    entryinmprint.addEventListener("click", function(){
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+            maincontent.style.display="block";
+            barcodescanner.style.display ="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+
+        }
+
+        else{
+            maincontent.style.display="block";
+            imprintwindow.classList.toggle("open");
+            pagetitle.innerHTML = "Impressum";
+            pagehint.innerHTML = "Herausgeber und Verantwortlicher der App";
+
+        }
+    });
+
+
     imprintout.addEventListener("click", function(){
         imprintwindow.classList.toggle("open");
         pagetitle.innerHTML = hometitle;
@@ -139,6 +161,7 @@ window.addEventListener("load", function(){
 
     /* OPEN  PRIVACY */
     var privacytrigger = document.getElementById("privacy");
+    var entryprivacy = document.getElementById("entryprivacy");
     var privacywindow = document.getElementById("privacywindow");
     var privacyout = document.getElementById("privacyout");
 
@@ -149,6 +172,15 @@ window.addEventListener("load", function(){
         pagetitle.innerHTML = "Datenschutz";
         pagehint.innerHTML = "Erklärung und Einstellungen";
         toggleMenu(); // Close the menu
+    });
+
+    entryprivacy.addEventListener("click", function(){
+        maincontent.style.display="block";
+        barcodescanner.style.display ="block";
+        privacywindow.classList.toggle("open");
+        pagetitle.innerHTML = "Datenschutz";
+        pagehint.innerHTML = "Erklärung und Einstellungen";
+
     });
 
     privacyout.addEventListener("click", function(){
@@ -235,17 +267,14 @@ window.addEventListener("load", function(){
 
     //ENTRYPAGE
     var entry = document.getElementById("entrypage");
-    var leaveentry = document.getElementById("leaveentry");
+    var leaveentry = document.getElementById("leaveentry")
 
-    function leaveentry(){
-       alert("hello")
-    }
 
-/*     leaveentry.addEventListener("click", function(){
-        leaveentry();
-
-    }) */
-    
+    leaveentry.addEventListener("click", function(){
+       entry.style.opacity ="0";
+       entry.style.pointerEvents = "none";
+       entry.style.display = "none";
+    })
 
 });
 
