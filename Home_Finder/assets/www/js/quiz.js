@@ -54,7 +54,11 @@ window.addEventListener("load", function(){
 	var radiosthirtyone = document.getElementById("qu-eight-la-three");
 	var radiosthirtytwo= document.getElementById("qu-eight-la-four");
 
-
+	/* 	FRAGE 9 */
+	var radiosthirtythree = document.getElementById("qu-nine-la-one");
+	var radiosthirtyfour = document.getElementById("qu-nine-la-two");
+	var radiosthirtyfive = document.getElementById("qu-nine-la-three");
+	var radiosthirtysix= document.getElementById("qu-nine-la-four");
 
 	//Frage 1 - Antwort 1 richtig
 
@@ -353,6 +357,43 @@ window.addEventListener("load", function(){
 		questionnumber[7].classList.remove("question-true");
 	})
 
+	//Frage 9 - Antwort 2 richtig
+	radiosthirtythree.addEventListener("click", function(){
+		radiosthirtythree.classList.add("label-false");
+		questionnumber[8].classList.add("question-false");
+		questionnumber[8].classList.remove("question-true");
+		radiosthirtyfour.classList.add("label-inactive");
+		radiosthirtyfive.classList.add("label-inactive");
+		radiosthirtysix.classList.add("label-inactive");
+	})
+
+	radiosthirtyfour.addEventListener("click", function(){
+		radiosthirtythree.classList.add("label-inactive");
+		radiosthirtyfour.classList.add("label-true");
+		questionnumber[8].classList.add("question-true");
+		questionnumber[8].classList.remove("question-false");
+		radiosthirtyfive.classList.add("label-inactive");
+		radiosthirtysix.classList.add("label-inactive");
+	})
+
+	radiosthirtyfive.addEventListener("click", function(){
+		radiosthirtythree.classList.add("label-inactive");
+		radiosthirtyfour.classList.add("label-inactive");
+		radiosthirtyfive.classList.add("label-false");
+		questionnumber[8].classList.add("question-false");
+		questionnumber[8].classList.remove("question-true");
+		radiosthirtysix.classList.add("label-inactive");
+	})
+
+	radiosthirtysix.addEventListener("click", function(){
+		radiosthirtythree.classList.add("label-inactive");
+		radiosthirtyfour.classList.add("label-inactive");
+		radiosthirtyfive.classList.add("label-inactive");
+		radiosthirtysix.classList.add("label-false");
+		questionnumber[8].classList.add("question-false");
+		questionnumber[8].classList.remove("question-true");
+	})
+
 });
 
 
@@ -490,6 +531,22 @@ function geteight(){
 	return stepeight;
 }
 
+// FRAGE 9
+function getnine(){
+	var two = document.getElementById("qu-nine-ans-two");
+	var stepnine;
+
+	if(two.checked){
+		stepnine = 1;
+	}
+
+	else {
+		stepnine = 0;
+	}
+
+	return stepnine;
+}
+
 
 
 function getscore(){
@@ -499,10 +556,12 @@ function getscore(){
 	var currentnotificationlist = document.getElementById("notificationlist").innerHTML;
 	var notificationthree = " <li id='notificationquizthree' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Drei Richtige!</h2> <small>Du hast schon 3 Fragen richtig beantwortet.</small> </div> </li>";
 	var notificationfive = " <li id='notificationquizfive' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Fünf Richtige!</h2> <small>Du hast schon 5 Fragen richtig beantwortet.</small> </div> </li>";
+	var notificationnine = " <li id='notificationquiznine' class='card notifications-card'> <div class='notifications-icon'></div> <div> <h2>Neun Richtige!</h2> <small>Dir fehlt noch eine richtige Antwort!</small> </div> </li>";
+
 
 	var livescore = document.getElementById("livescore");
 	var percent = document.getElementById("percent");
-	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight();
+	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight() +getnine();
 	livescore.innerHTML = score;
 	alert("Frage 1:" +getone());
 	alert("Frage 2:" +gettwo());
@@ -512,6 +571,7 @@ function getscore(){
 	alert("Frage 6:" +getsix());
 	alert("Frage 7:" +getseven());
 	alert("Frage 8:" +geteight());
+	alert("Frage 9:" +getnine());
 	alert("Gesamte:" +score);
 
 
@@ -556,7 +616,7 @@ function getscore(){
 
 	if(score >= 9){
 		percent.style.width = "90%"
-		notificationlist.innerHTML = notificationfive +currentnotificationlist;
+		notificationlist.innerHTML = notificationnine +currentnotificationlist;
 	}
 
 	if(score == 10){
