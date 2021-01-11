@@ -397,9 +397,47 @@ function readQR() {
 	window.plugins.barcodeScanner.scan(function(result) {
 		var text1 = result.text;
 
-		if (text1 != "") {
+		if (text1 == "Frage 1 öffnen") {
 			alert(text1);
-		} else {
+        }
+
+        if (text1 == "Frage 2 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 3 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 4 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 5 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 6 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 7 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 8 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 9 öffnen") {
+			alert(text1);
+        }
+
+        if (text1 == "Frage 10 öffnen") {
+			alert(text1);
+        }
+        
+        else {
 			alert("Scan abgebrochen");
 		}
 
