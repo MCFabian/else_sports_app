@@ -9,26 +9,8 @@ function toggleMenu() {
     document.getElementById("overlay").classList.toggle("overlay-active", UD_MENU_OPEN);
 }
 
-window.addEventListener("load", function(){
-/*     document.getElementById("overlay").addEventListener("click", function(){
-        UD_MENU_OPEN = !UD_MENU_OPEN;
-        document.getElementById("bb-btn").classList.toggle("is-active", UD_MENU_OPEN);
-        document.getElementById("nav").classList.toggle("nav-active", UD_MENU_OPEN);
-        document.getElementById("overlay").classList.toggle("overlay-active", UD_MENU_OPEN);
-    }); */
-
-/*     document.getElementById("overlay").addEventListener("touchstart", function(){
-        UD_MENU_OPEN = !UD_MENU_OPEN;
-        document.getElementById("bb-btn").classList.toggle("is-active", UD_MENU_OPEN);
-        document.getElementById("nav").classList.toggle("nav-active", UD_MENU_OPEN);
-        document.getElementById("overlay").classList.toggle("overlay-active", UD_MENU_OPEN);
-    }); */
-})
-
 
 window.addEventListener("load", function(){
-
-
 
     //OPEN NOTIFICATIONS
     var burgerbutton = document.getElementById("bb-btn");
@@ -36,7 +18,6 @@ window.addEventListener("load", function(){
     var notificationcounter = document.getElementById("notificationcounter");
     var notificationoverlay = document.getElementById("notification_overlay");
     var notificationsclose = document.getElementById("notifications-close");
-
     
     notification.addEventListener("click", function(){  //CHANGE To TOUCHSTART
         callnotifications();
@@ -104,70 +85,6 @@ function tablefilter() {
     }
 }
 
-
-
-
-
-
-/* (function() {
-	
-	function sortElements( elements, callback ) {
-		var elems = [];
-		for( var i = 0; i < elements.length; ++i ) {
-			var el = elements[i];
-			elems.push( el );
-		}
-		var sorted = elems.sort( callback );
-		return sorted;	
-	}
-	
-	function sortAscending( a, b ) {
-		var aValue = parseInt( a.firstChild.nodeValue, 10 );
-		var bValue = parseInt( b.firstChild.nodeValue, 10 );
-		return aValue > bValue;	
-	}
-	
-	function sortDescending( a, b ) {
-		var aValue = parseInt( a.firstChild.nodeValue, 10 );
-		var bValue = parseInt( b.firstChild.nodeValue, 10 );
-		return aValue < bValue;	
-	}		
-	
-	document.addEventListener( "DOMContentLoaded", function() {
-		var elements = document.querySelectorAll( "#acts li" ),
-			test = document.querySelector( "#acts" ),
-			asc = document.querySelector( "#asc" ),
-			desc = document.querySelector( "#desc" );
-		    
-		    
-		    asc.addEventListener( "click", function() {
-			    var sortedElements = sortElements( elements, sortAscending );
-			    var html = "";
-			    for( var i = 0; i < sortedElements.length; ++i ) {
-				    html += sortedElements[i].outerHTML;
-			    }
-			    test.innerHTML = html;
-			    
-		    }, false);
-		    
-		    desc.addEventListener( "click", function() {
-			    var sortedElements = sortElements( elements, sortDescending );
-			    var html = "";
-			    for( var i = 0; i < sortedElements.length; ++i ) {
-				    html += sortedElements[i].outerHTML;
-			    }
-			    test.innerHTML = html;
-			    
-		    }, false);
-		
-		
-		
-	});
-	
-})(); */
-
-
-
 window.addEventListener("load", function(){
     const maincontent = document.getElementById("home");
     var pagetitle = document.getElementById("pagetitle");
@@ -175,6 +92,39 @@ window.addEventListener("load", function(){
     var hometitle = "Willkommen";
     var homehint = "Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
     var barcodescanner = document.getElementById("scann-bar");
+
+
+    /* GET BACK TO HOME */
+    var hometrigger = document.getElementById("hometrigger");
+
+    hometrigger.addEventListener("click", function(){
+        alert("Home")
+        hometitle.innerHTML ="Willkommen";
+        homehint.innerHTML ="Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
+        barcodescanner.style.display ="block";
+        maincontent.style.display="block";
+        document.getElementById("overlay").classList.remove("overlay-active");
+        toggleMenu();
+        if(actswindow.style.display = "block"){
+            actswindow.style.display = "none"
+
+            if(nav.classList.contains("nav-active")){
+                toggleMenu();
+            }
+
+            else{
+                //
+            }
+
+        }
+
+        else{
+            //
+        }
+
+
+    })
+
 
     /* OPEN  IMPRINT */
     var imprinttrigger = document.getElementById("imprint");
@@ -277,15 +227,7 @@ window.addEventListener("load", function(){
 
     for (var i = 0; i < quiztrigger.length; i++) {
         quiztrigger[i].addEventListener("click", function(){
-/*             maincontent.style.display="block";
-            barcodescanner.style.display ="block";
-            quizwindow.classList.toggle("open");
-            pagetitle.innerHTML = "Gewinnspiel";
-            pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
-            document.getElementById("overlay").classList.toggle("overlay-active"); */
-
             readQR();
-
 
             if(actswindow.style.display = "block"){
                 actswindow.style.display = "none"
@@ -366,7 +308,6 @@ window.addEventListener("load", function(){
 /* OLD SLIDER */
 // Slider
 
-// Slider
 var slideIndex = 1;
 function plusSlides(n) {
     showSlides(slideIndex += n);
