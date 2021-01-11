@@ -1,4 +1,4 @@
-function readQR() {
+/* function readQR() {
 	window.plugins.barcodeScanner.scan(function(result) {
 		var text1 = result.text;
 
@@ -11,4 +11,8 @@ function readQR() {
 	}, function(error) {
 		alert("Scan failed: " + error);
 	});
-}
+} */
+
+
+
+

@@ -42,7 +42,6 @@
 					<a id="entryinmprint" class="blue link" href="#">Impressum</a>
 					<a id="entryprivacy" class="blue link" href="#">Datenschutz</a>
 				</div>
-				<a href="javascript:void(0);" onclick="alerttest();">test</a>
 			</div>
 		</div>
 
@@ -302,7 +301,7 @@
 							</div>
 
 							<!-- Frage 5 -->
-							<div class="mySlides fade">
+							<div id="questionfive" class="mySlides fade">
 								<div class="questionnumber"><span>5.</span></div>
 								<h2 class="question">Von wem stammt das Gemälde der Mona Lisa?</h2>
 								<label id="qu-five-la-one" class="long-label" for="qu-five-ans-one">
@@ -454,9 +453,11 @@
 							<span class="dot" onclick="currentSlide(5)"></span> 
 							<span class="dot" onclick="currentSlide(6)"></span> 
 							<span class="dot" onclick="currentSlide(7)"></span> 
-							<span class="dot" onclick="currentSlide(8)"></span> 
+							<span class="dot" onclick="currentSlide(8)"></span>
+							<span class="dot" onclick="currentSlide(9)"></span> 
+							<span class="dot" onclick="currentSlide(10)"></span> 
 						</div>
-						<div class="pop-end">
+						<div  style="padding: 10px 0;" class="pop-end">
 							<button onclick="plusSlides(-1)" class="list-btn">Zurück</button>
 							<button id="quizout" class="cancel-btn">Schließen</button>
 							<button id="next" onclick="plusSlides(1)" class="stn-btn">Weiter</button>
@@ -609,6 +610,7 @@
 
 				<!-- HOME -->
 				<ul id="homecards">
+					<button onclick="test();">TEST</button>
 					<li>
 						<a id="programm" class="card acts" href="#">
 							<div class="card-img-holder">

@@ -104,9 +104,6 @@ function tablefilter() {
     }
 }
 
-function alerttest(){
-    alert("Test");
-}
 
 
 
@@ -278,6 +275,9 @@ window.addEventListener("load", function(){
     var quizwindow = document.getElementById("quizwindow");
     var quizout = document.getElementById("quizout");
 
+
+
+
     for (var i = 0; i < quiztrigger.length; i++) {
         quiztrigger[i].addEventListener("click", function(){
             maincontent.style.display="block";
@@ -357,5 +357,98 @@ window.addEventListener("load", function(){
     })
 
 });
+
+
+
+window.addEventListener("load", function(){
+    showSlides(slideIndex);
+    currentSlide(1);
+})
+
+/* OLD SLIDER */
+// Slider
+
+// Slider
+var slideIndex = 1;
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+
+}
+
+/* READ QUIZ QR */
+function readQR() {
+	window.plugins.barcodeScanner.scan(function(result) {
+		var text1 = result.text;
+
+		if (text1 != "") {
+			alert(text1);
+		} else {
+			alert("Scan abgebrochen");
+		}
+
+	}, function(error) {
+		alert("Scan failed: " + error);
+	});
+}
+
+
+
+function test(){
+    getquizwindow();
+    currentSlide(6);
+}
+
+function getquizwindow(){
+    const maincontent = document.getElementById("home");
+    var pagetitle = document.getElementById("pagetitle");
+    var pagehint = document.getElementById("pagehint");
+    var barcodescanner = document.getElementById("scann-bar");
+    var actswindow = document.getElementById("actswindow");
+
+    alert("Test");
+    maincontent.style.display="block";
+    barcodescanner.style.display ="block";
+    quizwindow.classList.toggle("open");
+    pagetitle.innerHTML = "Gewinnspiel";
+    pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
+    document.getElementById("overlay").classList.toggle("overlay-active");
+
+    if(actswindow.style.display = "block"){
+        actswindow.style.display = "none"
+
+        if(nav.classList.contains("nav-active")){
+            toggleMenu();
+        }
+
+        else{
+            //
+        }
+
+    }
+
+    else{
+        //
+    }
+}
 
 
