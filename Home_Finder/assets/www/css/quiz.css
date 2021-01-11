@@ -12,7 +12,9 @@
 	background-image: url("../img/emoji/win.png");
 }
 
-
+#quizwindow {
+	height: 80vh !important;
+}
 
 #livescore {
 	display: inline-block;
@@ -282,4 +284,8 @@ input, label, textarea, select {
 
 .active, .dot:hover {
   background-color: var(--lightgrey);
+}
+
+.quizout {
+	margin: 20px 0;
 }

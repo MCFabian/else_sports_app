@@ -98,7 +98,6 @@ window.addEventListener("load", function(){
     var hometrigger = document.getElementById("hometrigger");
 
     hometrigger.addEventListener("click", function(){
-        alert("Home")
         hometitle.innerHTML ="Willkommen";
         homehint.innerHTML ="Probier das interaktive Gewinnspiel aus und Räume den Hauptpreis ab!";
         barcodescanner.style.display ="block";
