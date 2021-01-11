@@ -440,9 +440,11 @@ function readQR() {
         else {
 			alert("Scan abgebrochen");
 		}
-
-	}, function(error) {
-		alert("Scan failed: " + error);
+        
+        }, 
+        
+        function(error) {
+		    alert("Scan failed: " + error);
 	});
 }
 
