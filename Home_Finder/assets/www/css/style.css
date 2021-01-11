@@ -94,7 +94,18 @@
 	background: #fff;
 }
 
-.card-img-holder img {
+.card-img-holder-expanded {
+	height: auto;
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+	margin-bottom: 20px;
+} 
+
+.card-img-holder img,
+.card-img-holder-expanded img {
 	width: 100%;
 	height: auto;
 	display: block;
@@ -461,6 +472,24 @@
 #acts li .card .homecards-text {
 	border-radius: 20px;
 	padding: 10px 15px;
+}
+
+.actpage {
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	width: 100% !important;
+	pointer-events: all !important;
+}
+
+.actpage h1{
+	padding-top: 20px !important;
+}
+
+.actpage p {
+	padding-top: 20px;
+	line-height: 1.6;
+	font-size: 14px;
 }
 
 

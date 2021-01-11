@@ -280,6 +280,46 @@ window.addEventListener("load", function(){
         actswindow.style.display="none";
     });
 
+    /*OPEN SINGEL PAGES FOR ACTS */
+
+    var actpage = document.getElementsByClassName("actpage");
+    var acttoopen = document.getElementsByClassName("singelact");
+    var closeactpage = document.querySelectorAll(".closeactpage");
+    var allpages = document.querySelectorAll(".actpage");
+
+    acttoopen[0].addEventListener("click", function(){
+        document.getElementById("overlay").classList.add("overlay-active");
+        actpage[0].style.bottom = "0";
+    })
+
+    acttoopen[1].addEventListener("click", function(){
+        document.getElementById("overlay").classList.add("overlay-active");
+        actpage[1].style.bottom = "0";
+    })
+
+    acttoopen[2].addEventListener("click", function(){
+        document.getElementById("overlay").classList.add("overlay-active");
+        actpage[2].style.bottom = "0";
+    })
+
+    acttoopen[3].addEventListener("click", function(){
+        document.getElementById("overlay").classList.add("overlay-active");
+        actpage[3].style.bottom = "0";
+    })
+
+
+    for (var i = 0; i < closeactpage.length; i++) {
+        closeactpage[i].addEventListener("click", function(){
+            document.getElementById("overlay").classList.remove("overlay-active");
+            for (var i = 0; i < closeactpage.length; i++) {
+                allpages[i].style.bottom ="-100%";
+            }
+    })}
+
+
+
+
+
 
     //ENTRYPAGE
     var entry = document.getElementById("entrypage");
