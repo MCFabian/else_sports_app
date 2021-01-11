@@ -345,13 +345,10 @@ window.addEventListener("load", function(){
     var openentry = document.getElementById("entrynotifitication");
 
     openentry.addEventListener("click", function(){
-/*         entry.style.opacity ="1";
-        entry.style.pointerEvents = "all"; */
         entry.style.display = "block";
      })
 
     leaveentry.addEventListener("click", function(){
-/*        entry.style.opacity ="0"; */
        entry.style.display = "none";
        
     })
@@ -412,7 +409,7 @@ function readQR() {
 }
 
 
-
+//TESTING TO CALL WINDOWS
 function test(){
     getquizwindow();
     currentSlide(6);
