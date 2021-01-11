@@ -621,18 +621,6 @@ function getscore(){
 	var percent = document.getElementById("percent");
 	score = getone() +gettwo() +getthree() +getfour() +getfive() +getsix() +getseven() +geteight() +getnine() +getten();
 	livescore.innerHTML = score;
-	alert("Frage 1:" +getone());
-	alert("Frage 2:" +gettwo());
-	alert("Frage 3:" +getthree());
-	alert("Frage 4:" +getfour());
-	alert("Frage 5:" +getfive());
-	alert("Frage 6:" +getsix());
-	alert("Frage 7:" +getseven());
-	alert("Frage 8:" +geteight());
-	alert("Frage 9:" +getnine());
-	alert("Frage 10:" +getten());
-	alert("Gesamte:" +score);
-
 
 	//SET PERCENT-WIDTH OF CARD
 	if(score == 0){
@@ -647,7 +635,7 @@ function getscore(){
 		percent.style.width = "20%"
 	}
 
-	if(score >= 3){
+	if(score == 3){
 		percent.style.width = "30%"
 		notificationlist.innerHTML = notificationthree +currentnotificationlist;
 	}
@@ -656,7 +644,7 @@ function getscore(){
 		percent.style.width = "40%"
 	}
 
-	if(score >= 5){
+	if(score == 5){
 		percent.style.width = "50%"
 		notificationlist.innerHTML = notificationfive +currentnotificationlist;
 	}
@@ -673,7 +661,7 @@ function getscore(){
 		percent.style.width = "80%"
 	}
 
-	if(score >= 9){
+	if(score == 9){
 		percent.style.width = "90%"
 		notificationlist.innerHTML = notificationnine +currentnotificationlist;
 	}

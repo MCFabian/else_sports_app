@@ -273,20 +273,19 @@ window.addEventListener("load", function(){
     /* OPEN  QUIZ */
     var quiztrigger = document.querySelectorAll(".quiztrigger");
     var quizwindow = document.getElementById("quizwindow");
-/*     var quizout = document.getElementById("quizout"); */
     var quizout = document.querySelectorAll(".quizout");
-
-
-
 
     for (var i = 0; i < quiztrigger.length; i++) {
         quiztrigger[i].addEventListener("click", function(){
-            maincontent.style.display="block";
+/*             maincontent.style.display="block";
             barcodescanner.style.display ="block";
             quizwindow.classList.toggle("open");
             pagetitle.innerHTML = "Gewinnspiel";
             pagehint.innerHTML = "Finde alle QR-Codes und Fragen!";
-            document.getElementById("overlay").classList.toggle("overlay-active");
+            document.getElementById("overlay").classList.toggle("overlay-active"); */
+
+            readQR();
+
 
             if(actswindow.style.display = "block"){
                 actswindow.style.display = "none"
