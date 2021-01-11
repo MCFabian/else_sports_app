@@ -273,7 +273,8 @@ window.addEventListener("load", function(){
     /* OPEN  QUIZ */
     var quiztrigger = document.querySelectorAll(".quiztrigger");
     var quizwindow = document.getElementById("quizwindow");
-    var quizout = document.getElementById("quizout");
+/*     var quizout = document.getElementById("quizout"); */
+    var quizout = document.querySelectorAll(".quizout");
 
 
 
@@ -307,14 +308,15 @@ window.addEventListener("load", function(){
 
     })};
 
-    quizout.addEventListener("click", function(){
+    for (var i = 0; i < quizout.length; i++) {
+        quizout[i].addEventListener("click", function(){
         document.getElementById("overlay").classList.remove("overlay-active");
         quizwindow.classList.toggle("open");
         pagetitle.innerHTML = hometitle;
         pagehint.innerHTML = homehint;
 
         getscore();
-    });
+    })};
 
     /* OPEN  ACTS */
     var actstrigger = document.querySelectorAll(".acts");
@@ -398,43 +400,63 @@ function readQR() {
 		var text1 = result.text;
 
 		if (text1 == "Frage 1 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(1);
         }
 
         if (text1 == "Frage 2 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(2);
         }
 
         if (text1 == "Frage 3 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(3);
         }
 
         if (text1 == "Frage 4 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(4);
         }
 
         if (text1 == "Frage 5 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(5);
         }
 
         if (text1 == "Frage 6 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(6);
         }
 
         if (text1 == "Frage 7 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(7);
         }
 
         if (text1 == "Frage 8 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(8);
         }
 
         if (text1 == "Frage 9 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(9);
         }
 
         if (text1 == "Frage 10 öffnen") {
-			alert(text1);
+            /* alert(text1); */
+            getquizwindow();
+            currentSlide(10);
         }
         
         else {
@@ -448,13 +470,6 @@ function readQR() {
 	});
 }
 
-
-//TESTING TO CALL WINDOWS
-function test(){
-    getquizwindow();
-    currentSlide(6);
-}
-
 function getquizwindow(){
     const maincontent = document.getElementById("home");
     var pagetitle = document.getElementById("pagetitle");
@@ -462,7 +477,6 @@ function getquizwindow(){
     var barcodescanner = document.getElementById("scann-bar");
     var actswindow = document.getElementById("actswindow");
 
-    alert("Test");
     maincontent.style.display="block";
     barcodescanner.style.display ="block";
     quizwindow.classList.toggle("open");

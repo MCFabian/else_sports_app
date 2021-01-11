@@ -209,7 +209,7 @@ input, label, textarea, select {
 }
 
 .label-inactive {
-	/* pointer-events: none;  AKTIVIEREN*/
+	pointer-events: none;
 	opacity: .1;
 }
 
