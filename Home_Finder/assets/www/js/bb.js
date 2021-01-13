@@ -479,6 +479,76 @@ function getquizwindow(){
     else{
         //
     }
+
 }
 
+window.addEventListener("load", function(){
+    //FUNTKION ZUM AUFRUF DER LIVEKACHEL
+    // DA ICH KEIN DATUM DER VERANSTALTUNG HABE; PRÜFE ICH NUR NACH ZEIT
+    function livetimecontent(){
+        //var refreshscore = 0;
+        setInterval(function(){
+
+            //KACHELN
+            var livecard = document.getElementById("livecard");
+            //var counter = document.getElementById("counter");
+            var card1 = "<a id='programm' class='card acts'><div class='card-img-holder'><img src='img/example.png' alt='Vorschaubild'></div><div class='homecards-text'><div class='homecards-icon' id='programm-icon'></div><div><small>Aktuell läuft:</small><h2>Begrüßungsrede der Schulleitung</h2></div></div><span></span></a>";
+            var card2 = "<a id='programm' class='card acts'><div class='card-img-holder'><img src='img/example2.png' alt='Vorschaubild'></div><div class='homecards-text'><div class='homecards-icon' id='programm-icon'></div><div><small>Aktuell läuft:</small><h2>Dinner for One</h2></div></div><span></span></a>";
+            var card3 = "<a id='programm' class='card acts'><div class='card-img-holder'><img src='img/example.png' alt='Vorschaubild'></div><div class='homecards-text'><div class='homecards-icon' id='programm-icon'></div><div><small>Aktuell läuft:</small><h2>Fallschirmspringer Udo</h2></div></div><span></span></a>";
+            var card4 = "<a id='programm' class='card acts'><div class='card-img-holder'><img src='img/example2.png' alt='Vorschaubild'></div><div class='homecards-text'><div class='homecards-icon' id='programm-icon'></div><div><small>Aktuell läuft:</small><h2>Abschlussrede der Schulleitung</h2></div></div><span></span></a>";
+
+            //DELAY FOR DEBUG -> TO CHECK IF CARD IS LOADING
+            //setTimeout(function(){
+                //livecard.innerHTML="Refreshing now..."
+            //}, 1000);
+
+
+            //GET DATE - TIME - HOURS
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+
+            //HABE KEINE PLACEHOLDER KARTE
+            if(h < 13){
+                livecard.innerHTML = card1;
+            }
+
+            if(h == 13){
+                livecard.innerHTML = card1;
+            }
+
+            else if(h == 14 ){
+                livecard.innerHTML = card2;
+            }
+
+            else if(h == 15  ){
+                livecard.innerHTML = card3;
+            }
+
+            else if(h == 16 ){
+                livecard.innerHTML = card4;
+            }
+
+            //HABE KEINE PLACEHOLDER KARTE
+            else if(h >= 17 ){
+                livecard.innerHTML = card1;
+            }
+        
+            else {
+                livecard.innerHTML="Fehler mit der Livekachel";
+            }
+
+
+
+            //COUNTING THE REFRESH
+            //refreshscore = refreshscore + 1;
+            //counter.innerHTML = refreshscore;
+
+
+        }, 3000)
+    }
+
+    livetimecontent();
+
+})
 

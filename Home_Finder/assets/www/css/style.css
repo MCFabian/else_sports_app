@@ -297,11 +297,14 @@
 	vertical-align: text-top;
 }
 
-#programm, #game, #media {
-	padding: 0;
-	width: 100%;
-	position: relative;
-	margin-bottom: 10px;
+#programm,
+.programm, 
+#game, 
+#media {
+	padding: 0 !important;
+	width: 100% !important;
+	position: relative !important;
+	margin-bottom: 10px !important;
 }
 
 #game {
@@ -365,7 +368,8 @@
 	top: 0;
 }
 
-#programm>span {
+#programm>span,
+.programm>span {
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	background: var(--blue);
@@ -480,6 +484,10 @@
 	padding-top: 0 !important;
 	width: 100% !important;
 	pointer-events: all !important;
+}
+
+.actpage .solid_overlay_inner {
+	padding-bottom: 20px;
 }
 
 .actpage h1{

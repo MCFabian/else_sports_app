@@ -133,7 +133,6 @@
 			</div>
 
 			<main id="actswindow">
-
 				<!-- ACTPAGE 1 -->
 				<div class="slide_overlay actpage">
 					<div class="card-img-holder-expanded">
@@ -141,7 +140,7 @@
 					</div>
 					<div class="solid_overlay_inner">
 						<h1 class="blue">Abschlussrede der Schulleitung</h1>
-						<strong>15:45 Uhr - 16:45 Uhr</strong>
+						<strong>13:00 Uhr - 14:00 Uhr</strong>
 						<p>Abschlussrede der Schulleitung
 														
 							Wir, die Schulleitung der Ernst-Litfaß- und Emil-Fischer-Schule bedanken uns bei allen Besucherinnen und Besuchern.
@@ -161,7 +160,7 @@
 					</div>
 					<div class="solid_overlay_inner">
 						<h1 class="blue">Dinner for One</h1>
-						<strong>14:45 Uhr - 15:45 Uhr</strong>
+						<strong>14:00 Uhr - 15:00 Uhr</strong>
 						<p>Abschlussrede der Schulleitung
 														
 							Wir, die Schulleitung der Ernst-Litfaß- und Emil-Fischer-Schule bedanken uns bei allen Besucherinnen und Besuchern.
@@ -181,7 +180,7 @@
 					</div>
 					<div class="solid_overlay_inner">
 						<h1 class="blue">Fallschirmspringer Udo</h1>
-						<strong>15:45 Uhr - 16:45 Uhr</strong>
+						<strong>15:00 Uhr - 16:00 Uhr</strong>
 						<p>Abschlussrede der Schulleitung
 														
 							Wir, die Schulleitung der Ernst-Litfaß- und Emil-Fischer-Schule bedanken uns bei allen Besucherinnen und Besuchern.
@@ -198,7 +197,7 @@
 				<div class="slide_overlay actpage">
 					<div class="solid_overlay_inner">
 						<h1 class="blue">Begrüßungsrede der Schulleitung</h1>
-						<strong>16:45 Uhr - 17:45 Uhr</strong>
+						<strong>16:00 Uhr - 17:00 Uhr</strong>
 						<p>Abschlussrede der Schulleitung
 														
 							Wir, die Schulleitung der Ernst-Litfaß- und Emil-Fischer-Schule bedanken uns bei allen Besucherinnen und Besuchern.
@@ -219,7 +218,7 @@
 					<button id="sortbutton" class="icon">swap_vert</button>
 				</div>
 
-				<a id="programm" class="card singelact" href="#">
+				<a class="card singelact programm">
 					<div class="card-img-holder">
 						<img src="img/example.png" alt="$">
 					</div>
@@ -235,33 +234,33 @@
 				<hr>
 				<ul id="acts">
 					<li class="singelact">
-						<a id="programm" class="card" href="#">
+						<a  class="card programm">
 							<div class="homecards-text">
 								<div class="homecards-icon" id="programm-icon"></div>
 								<div >
-									<small>14:45 Uhr - 15:45 Uhr</small>
+									<small>14:00 Uhr - 15:00 Uhr</small>
 									<h2 class="searchfortext">Dinner for One</h2>
 								</div>
 							</div>
 						</a>
 					</li>
 					<li class="singelact">
-						<a id="programm" class="card" href="#">
+						<a  class="card programm">
 							<div class="homecards-text">
 								<div class="homecards-icon" id="programm-icon"></div>
 								<div >
-									<small>15:45 Uhr - 16:45 Uhr</small>
+									<small>15:00 Uhr - 16:00 Uhr</small>
 									<h2 class="searchfortext">Fallschirmspringer Udo</h2>
 								</div>
 							</div>
 						</a>
 					</li>
 					<li class="singelact">
-						<a id="programm" class="card" href="#">
+						<a  class="card programm">
 							<div class="homecards-text">
 								<div class="homecards-icon" id="programm-icon"></div>
 								<div >
-									<small>16:45 Uhr - 17:45 Uhr</small>
+									<small>16:00 Uhr - 17:00 Uhr</small>
 									<h2 class="searchfortext">Abschlussrede der Schulleitung</h2>
 								</div>
 							</div>
@@ -625,61 +624,20 @@
                         </div>
                     </div>
 				</div>
-				
-				<!-- ACT-LIST -->
-				<div id="actswindow" class="solid_overlay">
-                    <div class="solid_overlay_inner">
-						<div class="filter">
-							<input onkeyup="tablefilter()" id="search" placeholder="Nach Auftritten suchen" type="text" name="" id="">
-							<button class="icon">swap_vert</button>
-						</div>
-		
-						<a id="programm" class="card" href="#">
-							<div class="card-img-holder">
-								<img src="img/example.png" alt="$">
-							</div>
-							<div class="homecards-text">
-								<div class="homecards-icon" id="programm-icon"></div>
-								<div >
-									<small>Aktuell läuft:</small>
-									<h2>Begrüßungsrede der Schulleitungen</h2>
-								</div>
-							</div>
-							<span></span>
-						</a>
-						<hr>
-						<ul id="acts">
-							<li>
-								<a id="programm" class="card" href="#">
-									<div class="homecards-text">
-										<div class="homecards-icon" id="programm-icon"></div>
-										<div >
-											<small>Aktuell läuft:</small>
-											<h2 class="searchfortext">Begrüßungsrede der Schulleitungen</h2>
-										</div>
-									</div>
-									<span></span>
-								</a>
-							</li>
-						</ul>
-						<div class="classic-btn" id="actsout">Home</div>
-                    </div>
-				</div>
-
 
 
 				<!-- HOME -->
 				<ul id="homecards">
-					<li>
-						<a id="programm" class="card acts" href="#">
+					<li id="livecard" class="acts">
+						<a id="programm" class="card ">
 							<div class="card-img-holder">
-								<img src="img/example.png" alt="$">
+								<img src="img/example.png" alt="Vorschaubild">
 							</div>
 							<div class="homecards-text">
 								<div class="homecards-icon" id="programm-icon"></div>
 								<div>
 									<small>Aktuell läuft:</small>
-									<h2>Begrüßungsrede der Schulleitungen</h2>
+									<h2>Begrüßungsrede der Schulleitung</h2>
 								</div>
 							</div>
 							<span></span>
