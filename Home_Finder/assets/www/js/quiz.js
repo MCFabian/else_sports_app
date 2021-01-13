@@ -2,6 +2,19 @@
 
 window.addEventListener("load", function(){
 
+	// FOR WINNERPOPUP
+	var winnerpopup = document.getElementById("winnerpopup");
+	var overlay2 = document.getElementById("overlay");
+	var winnerpopupclose = document.getElementById("winnerpopupclose");
+
+	//CLOSE WINNERPOPUP
+	winnerpopupclose.addEventListener("click", function(){
+		winnerpopup.style.display ="none";
+		overlay2.style.display ="none";
+	})
+
+
+	// FOR QUIZ
 	var questionnumber = document.getElementsByClassName("questionnumber");
 
 	/* 	FRAGE 1 */
@@ -669,6 +682,10 @@ function getscore(){
 	if(score == 10){
 		percent.style.width = "100%"
 		notificationlist.innerHTML = notificationten +currentnotificationlist;
+
+		//WINNERPOPUP
+		winnerpopup.style.display= "block";
+		overlay2.style.display = "block";
 	}
 
 	var notificationquantity = document.getElementById("notificationlist").childElementCount;
@@ -681,6 +698,8 @@ function getscore(){
 	else {
 		//
 	}
+
+
 
 }
 
