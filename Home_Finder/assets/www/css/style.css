@@ -1,3 +1,26 @@
+/* ENTRYPAGE */
+#entrypage {
+	background-color: #F3F4F8;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	z-index: 3;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	transition: opacity .3s ;
+}
+
+#entrypage .slide_overlay,
+#entrypage .slide_overlay_static {
+	pointer-events: all;
+}
+
+#entrypage #wave {
+	margin-top: 60px;
+}
+
 #scann-bar {
 	background: var(--blue);
 	position: fixed;
@@ -11,12 +34,13 @@
 	text-align: center;
 	color: #fff;
 	font-size: 14px;
+	font-weight: 700;
 	box-shadow: 20px 20px 32px 40px rgb(255, 255, 255);
 }
-#scann-bar button {
+#scann-bar button,
+#scann-bar svg {
 	position: absolute;
 	left: 0;
-	font-size: 22px;
 	right: 0;
 	top: -25px;
 	margin: 0 auto;
@@ -70,7 +94,18 @@
 	background: #fff;
 }
 
-.card-img-holder img {
+.card-img-holder-expanded {
+	height: auto;
+	width: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+	margin-bottom: 20px;
+} 
+
+.card-img-holder img,
+.card-img-holder-expanded img {
 	width: 100%;
 	height: auto;
 	display: block;
@@ -127,10 +162,15 @@
 	vertical-align: middle;
 }
 
-#logo-row {
+.logo-row {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.logo-row > a {
+	margin: auto 15px;
+	padding: 15px 0;
 }
 
 #else, #fischer {
@@ -142,11 +182,22 @@
 	background-position: center;
 }
 
-#else {
+#else_big, #fischer_big {
+	margin: 15px 7.5px;
+	height: 40px;
+	width: 89px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#else,
+#else_big {
 	background-image: url("../img/menu_else.png");
 }
 
-#fischer {
+#fischer,
+#fischer_big  {
 	background-image: url("../img/menu_fischer.png");
 }
 
@@ -246,11 +297,14 @@
 	vertical-align: text-top;
 }
 
-#programm, #game, #media {
-	padding: 0;
-	width: 100%;
-	position: relative;
-	margin-bottom: 10px;
+#programm,
+.programm, 
+#game, 
+#media {
+	padding: 0 !important;
+	width: 100% !important;
+	position: relative !important;
+	margin-bottom: 10px !important;
 }
 
 #game {
@@ -309,13 +363,13 @@
 #percent {
 	background: var(--lightgrey);
 	height: 5px;
-	width: 50%;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
 
-#programm>span {
+#programm>span,
+.programm>span {
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	background: var(--blue);
@@ -409,7 +463,44 @@
 #acts {
 	list-style: none;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
 }
+
+#acts.dec {
+	flex-direction: column-reverse;
+}
+
+
+
+#acts li .card .homecards-text {
+	border-radius: 20px;
+	padding: 10px 15px;
+}
+
+.actpage {
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+	width: 100% !important;
+	pointer-events: all !important;
+}
+
+.actpage .solid_overlay_inner {
+	padding-bottom: 20px;
+}
+
+.actpage h1{
+	padding-top: 20px !important;
+}
+
+.actpage p {
+	padding-top: 20px;
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+
  @-webkit-keyframes scale-up-center {
 	0% {
 			  background: #E0E0E9;
